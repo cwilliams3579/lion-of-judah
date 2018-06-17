@@ -24,7 +24,9 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(book_params)
+    # @book = Book.new(book_params)
+    @book = current_user.books.build(book_params)
+    @book.user_id = current_user.id
 
     respond_to do |format|
       if @book.save
