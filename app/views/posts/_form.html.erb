@@ -7,11 +7,11 @@
       <%= form_for(post) do |f| %>
         <% if post.errors.any? %>
           <div id="error_explanation">
-            <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+            <h2 class="red-text"><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
             <ul>
             <% post.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
+              <li class="red-text"><%= message %></li>
             <% end %>
             </ul>
           </div>
@@ -19,23 +19,23 @@
 
         <div class="btn-group">
           <i class="fa fa-camera-retro fa-2x prefix fa-fonts"></i> &nbsp;
-          <%= image_tag(post.image) if post.image? %><br>
+          <%#= image_tag(post.image.url) if post.image? %><br>
           <%= f.file_field :image, class:"white-text" %>
           <%= f.hidden_field :image_cache %>
         </div>
 
         <div class="md-form">
           <i class="fa fa-tag prefix fa-fonts"></i>
-          <%= f.text_field :title, placeholder: "Enter title", :autofocus => true, class: 'form-control gold-text' %>
+          <%= f.text_field :title, placeholder: "Enter title", :autofocus => true, class: 'form-control white-text' %>
         </div>
 
         <div class="md-form">
           <i class="fa fa-pencil prefix fa-fonts"></i>
-          <%= f.text_area :description, placeholder: "Enter description", class: 'md-textarea gold-text' %>
+          <%= f.text_area :description, placeholder: "Enter description", class: 'md-textarea white-text' %>
         </div>
 
         <div class="md-form center">
-          <%= f.button '', class: "fa fa-paw fa-3x waves-effect waves-light", style: "background:transparent; border:none; color:goldenrod;", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true", class: " waves-effect waves-light btn-img", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."}) %>
         </div>
       <% end %>
     </div>
