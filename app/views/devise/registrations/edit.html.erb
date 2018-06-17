@@ -41,14 +41,14 @@
           </div>
         </fieldset>
         <div class="md-form center">
-          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true", class: " waves-effect waves-light btn-img", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."}) %>
+          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true", onclick: "loadContent(1)", class: " waves-effect waves-light btn-img") %>
         </div>
       <% end %>
       </div>
       <div class="md-form text-center white-text">
       <h3>Cancel Account</h3>
       <p>Unhappy? We'll be sad to see you go.</p>
-      <%= link_to "", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'fa fa-trash fa-lg text-danger' %>
+      <%= link_to "", registration_path(resource_name), onclick: "loadContent(1)", :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'fa fa-trash fa-lg text-danger' %>
     </div>
   </div>
 </div>
