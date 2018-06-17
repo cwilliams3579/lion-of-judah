@@ -41,7 +41,7 @@ body,
 
 .md-form {
   .card {
-    background-image: url(https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true);
+    background-image: url(https://www.xmple.com/wallpaper/beehive-brown-black-hexagon-honeycomb-1920x1080-c2-000000-daa520-l2-9-117-a-15-f-5.svg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -134,4 +134,20 @@ padding-left: 240px;
 header, main, footer {
   padding-left: 0;
 }
+}
+
+
+.btn-img {
+    background: url(https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true) no-repeat;
+    width: 10%;
+    background-position: center;
+    background-size: contain;
+    text-indent:30px;
+    // display:block;
+    cursor: pointer;
+}
+
+.fm-fonts {
+  color: #fff !important;
+  font-size: 18px !important;
 }
