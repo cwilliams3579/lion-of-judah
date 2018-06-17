@@ -10,23 +10,23 @@
     <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled.min.css" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
-
+    <script>
+      var bleep = new Audio();
+      bleep.src = "https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-purr2.wav?raw=true";
+      function loadContent(num){
+          bleep.play(); // Play button sound now
+          var div1 = document.getElementById("div1");
+          div1.innerHTML = "Loaded content for section "+num;
+      }
+    </script>
   </head>
   <body class="hidden-sn black-skin">
-    <header>
+  
       <%= render 'layouts/navigation' %>
-    </header>
 
        <%= render 'layouts/messages' %>
        <%= yield %>
-    
     <%= render 'layouts/footer' %>
-    <script type="text/javascript">
-    // SideNav Button Initialization
-    $(".button-collapse").sideNav();
-    // SideNav Scrollbar Initialization
-    var sideNavScrollbar = document.querySelector('.custom-scrollbar');
-    Ps.initialize(sideNavScrollbar);
-    </script>
+    <%= render 'layouts/scripts' %>
   </body>
 </html>
