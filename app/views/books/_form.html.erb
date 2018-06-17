@@ -21,10 +21,10 @@
           <i class="fa fa-camera-retro fa-2x prefix fa-fonts"></i> &nbsp;
           <%= image_tag(book.image.url) if book.image? %><br>
           <%= f.file_field :image, class:"white-text" %>
-          <div class="center">
-            <%= f.hidden_field :image_cache %>
-          </div>
         </div>
+        <small class="center">
+          <%#= f.hidden_field :image_cache %>
+        </small>
 
         <div class="md-form">
           <i class="fa fa-tag prefix fa-fonts"></i>
