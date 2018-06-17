@@ -1,37 +1,43 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div class="container-small mt">
+  <div class="card mb">
+    <div class="card-block">
+      <div class="form-header  btn-outline-gold">
+        <h3><%= current_user.full_name if current_user.present? %></h3>
+      </div>
+      <%= form_for(post) do |f| %>
+        <% if post.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+            <% post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="btn-group">
+          <i class="fa fa-camera-retro fa-2x prefix fa-fonts"></i> &nbsp;
+          <%= image_tag(post.image) if post.image? %><br>
+          <%= f.file_field :image, class:"white-text" %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-tag prefix fa-fonts"></i>
+          <%= f.text_field :title, placeholder: "Enter title", :autofocus => true, class: 'form-control gold-text' %>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-pencil prefix fa-fonts"></i>
+          <%= f.text_area :description, placeholder: "Enter description", class: 'md-textarea gold-text' %>
+        </div>
+
+        <div class="md-form center">
+          <%= f.button '', class: "fa fa-paw fa-3x waves-effect waves-light", style: "background:transparent; border:none; color:goldenrod;", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+        </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

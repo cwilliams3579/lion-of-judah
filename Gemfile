@@ -31,6 +31,8 @@ gem 'devise'
 gem 'high_voltage'
 gem 'jquery-rails'
 gem 'pundit'
+gem 'carrierwave'
+gem 'mini_magick'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
