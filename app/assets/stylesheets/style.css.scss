@@ -39,12 +39,21 @@ body,
                 radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
 }
 
-.card {
-  background-image: url(https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true);
-  background-size: cover;
-  background-repeat: no-repeat;
+.md-form {
+  .card {
+    background-image: url(https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
+.mt {
+  margin-top: 100px;
+}
+
+.gold-text, .card-title a {
+  color: goldenrod !important;
+}
 
   .goldenrod-text  {
 
@@ -66,4 +75,10 @@ body,
   text-align: center !important;
   margin: 0 auto !important;
   width: 50px;
+}
+
+.sn-bg-1 {
+    background-image: url(https://www.xmple.com/wallpaper/beehive-brown-black-hexagon-honeycomb-1920x1080-c2-000000-daa520-l2-9-117-a-15-f-5.svg) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
