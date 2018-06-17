@@ -1,28 +1,49 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <h3>Sign in</h3>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%- if devise_mapping.registerable? %>
-        <%= link_to 'Sign up', new_registration_path(resource_name), class: 'right'  %>
-      <% end -%>
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%- if devise_mapping.recoverable? %>
-        <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %>
-      <% end -%>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-      <%= f.submit 'Sign in', :class => 'button right' %>
-      <% if devise_mapping.rememberable? -%>
-        <div class="checkbox" style="width:150px">
-          <label>
-            <%= f.check_box :remember_me %> Remember me
-          </label>
+<% content_for :title do %>Sign In<% end %>
+<br><br><br><br><br><br><br><br><br>
+<div class="container-small">
+    <div class="card"  style="background: #000000; border: 4px solid goldenrod; padding:20px;">
+      <div class="card-block" style="background-image: url(https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true); background-size: contain; background-position: center; background-repeat:no-repeat;">
+        <div class="form-header" style="background-color: transparent !important; border: 2px solid goldenrod !important; color: goldenrod !important;">
+          <h3 style="color: goldenrod;"> Sign In</h3>
         </div>
-      <% end -%>
-  <% end %>
+        <%= render 'layouts/messages' %>
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="md-form">
+            <i class="fas fa-envelope prefix" style="color:goldenrod;"></i>
+            <%= f.email_field :email, placeholder: "Email", :autofocus => true, class: 'form-control', style: "color:goldenrod; font-size:18px;" %>
+          </div>
+          <div class="md-form">
+            <i class="fas fa-lock prefix" style="color:goldenrod;"></i>
+            <%= f.password_field :password, placeholder: "Your password", class: 'form-control', style: "color:goldenrod; font-size:18px;" %>
+          </div>
+
+            <div class="md-form center">
+              <%= f.button "", class: "fas fa-paw paw fa-3x waves-effect waves-light", style: "background: transparent; border: none; color: goldenrod !important;", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+            </div>
+            <% if devise_mapping.rememberable? -%>
+              <div class="checkbox" style="width:150px">
+                <label for="Remember Me" class="white-text">
+                  <%= f.check_box :remember_me %>
+                  Remember Me
+                </label>
+              </div>
+            <% end -%>
+        <% end %>
+        <div class="btn-group">
+          <%- if devise_mapping.registerable? %>
+            <%= link_to 'Sign up', new_registration_path(resource_name), class: 'right', style: "color:goldenrod;"  %>
+          <% end -%> &nbsp; &nbsp; 
+          <%- if devise_mapping.recoverable? %>
+          <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right', style: "color:goldenrod;" %>
+          <% end -%>
+        </div>
+    </div>
+  </div>
 </div>
+<br><br>
+<div class="center">
+  <%= link_to "", root_path, class: "fa fa-hand-o-left fa-2x", style: "color:goldenrod;" %>
+</div>
+
+<%= render "devise/shared/links" %>

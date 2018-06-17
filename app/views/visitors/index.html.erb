@@ -1,2 +1,515 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<%#= render 'modals/quick' %>
+<br><br><br>
+<div class="container">
+  <%= render 'layouts/messages' %>
+  <!--Projects section v.2-->
+
+
+  <!--Carousel Wrapper-->
+  <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+              <img class="d-block w-100 samurai" src="https://github.com/cwilliams3579/Choosen-uploads/blob/master/afro-samurai-trio.jpg?raw=true" alt="First slide">
+          </div>
+          <div class="carousel-item">
+              <img class="d-block w-100 samurai" src="https://github.com/cwilliams3579/Choosen-uploads/blob/master/afrosamurai-single.jpg?raw=true" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+              <img class="d-block w-100 samurai" src="https://github.com/cwilliams3579/Choosen-uploads/blob/master/afrosamurai.jpg?raw=true" alt="Third slide">
+          </div>
+      </div>
+      <!--/.Slides-->
+      <!--Controls-->
+      <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+      <!--/.Controls-->
+      <ol class="carousel-indicators">
+          <li data-target="#carousel-thumb" data-slide-to="0" class="active"> <img class="d-block w-100" src="https://github.com/cwilliams3579/Choosen-uploads/blob/master/afro-samurai-trio.jpg?raw=true" class="img-fluid"></li>
+          <li data-target="#carousel-thumb" data-slide-to="1"><img class="d-block w-100" src="https://github.com/cwilliams3579/Choosen-uploads/blob/master/afrosamurai-single.jpg?raw=true" class="img-fluid"></li>
+          <li data-target="#carousel-thumb" data-slide-to="2"><img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/Carousel-thumbs/img%20(31).jpg" class="img-fluid"></li>
+      </ol>
+  </div>
+  <!--/.Carousel Wrapper-->
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <section class="section">
+
+    <!--Section description-->
+    <section class="section extra-margins">
+      <!--Section heading-->
+
+
+      <!--Section heading-->
+
+      <!--First row-->
+      <div class="row">
+
+        <!--First column-->
+        <div class="col-md-6 mb-r">
+          <!--Image-->
+          <img src="https://raw.githubusercontent.com/cwilliams3579/Choosen-uploads/master/lion.png" alt="lion" class="img-fluid z-depth-2 lion">
+        </div>
+        <!--/First column-->
+
+        <!--Second column-->
+        <div class="col-md-5 offset-md-1">
+          <!--First row-->
+          <div class="row">
+            <div class="col-1 mr-1">
+              <i class="fas fa-user-ninja fa-2x gold-text"></i>
+            </div>
+            <div class="col-10">
+              <h4 class="feature-title">Exodus 19:16</h4>
+              <p class="grey-text">So it came about on the third day, when it was morning, that there were thunder and lightning flashes and a thick cloud upon the mountain and a very loud trumpet sound, so that all the people who were in the camp trembled.</p>
+            </div>
+          </div>
+          <!--/First row-->
+
+          <div style="height:20px"></div>
+
+          <!--Second row-->
+          <div class="row">
+            <div class="col-1 mr-1">
+              <i class="fas fa-paw fa-2x navy-text"></i>
+            </div>
+            <div class="col-10">
+              <h4 class="feature-title">1 Corinthians 15:51-52</h4>
+              <p class="grey-text">Behold, I tell you a mystery; we will not all sleep, but we will all be changed, in a moment, in the twinkling of an eye, at the last trumpet; for the trumpet will sound, and the dead will be raised imperishable, and we will be changed.
+
+</p>
+            </div>
+          </div>
+          <!--/Second row-->
+
+          <div style="height:20px"></div>
+
+          <!--Third row-->
+          <div class="row">
+            <div class="col-1 mr-1">
+              <i class="fas fa-book fa-2x gold-text"></i>
+            </div>
+            <div class="col-10">
+              <h4 class="feature-title">1 Thessalonians 4:16-17</h4>
+              <p class="grey-text">For the Lord Himself will descend from heaven with a shout, with the voice of the archangel and with the trumpet of God, and the dead in Christ will rise first. Then we who are alive and remain will be caught up together with them in the clouds to meet the Lord in the air, and so we shall always be with the Lord.</p>
+            </div>
+          </div>
+          <!--/Third row-->
+
+        </div>
+        <!--/Second column-->
+
+      </div>
+      <!--/First row-->
+
+      <div style="height:70px">
+        <hr class="hidden-md-up">
+      </div>
+
+      <!--Second row-->
+      <div class="row">
+
+        <!--First column-->
+        <div class="col-md-5 mb-r">
+
+          <!--First row-->
+          <div class="row">
+            <div class="col-1 mr-1">
+              <i class="fas fa-book fa-2x gold-text"></i>
+            </div>
+            <div class="col-10">
+              <h4 class="feature-title">Genesis 49:9-10</h4>
+              <p class="grey-text">"Judah is a lion's whelp; From the prey, my son, you have gone up He couches, he lies down as a lion, And as a lion, who dares rouse him up? "The scepter shall not depart from Judah, Nor the ruler's staff from between his feet, Until Shiloh comes, And to him shall be the obedience of the peoples.</p>
+            </div>
+          </div>
+          <!--/First row-->
+
+          <div style="height:20px"></div>
+
+          <!--Second row-->
+          <div class="row">
+            <div class="col-1 mr-1">
+              <i class="fas fa-paw fa-2x navy-text"></i>
+            </div>
+            <div class="col-10">
+              <h4 class="feature-title">Revelation 5:5</h4>
+              <p class="grey-text">and one of the elders said to me, "Stop weeping; behold, the Lion that is from the tribe of Judah, the Root of David, has overcome so as to open the book and its seven seals."</p>
+            </div>
+          </div>
+          <!--/Second row-->
+
+          <div style="height:20px"></div>
+
+          <!--Third row-->
+          <div class="row">
+            <div class="col-1 mr-1">
+              <i class="fas fa-book fa-2x gold-text"></i>
+            </div>
+            <div class="col-10">
+              <h4 class="feature-title">Revelation 5:2-4</h4>
+              <p class="grey-text">And I saw a strong angel proclaiming with a loud voice, "Who is worthy to open the book and to break its seals?" And no one in heaven or on the earth or under the earth was able to open the book or to look into it. Then I began to weep greatly because no one was found worthy to open the book or to look into it.</p>
+            </div>
+          </div>
+          <!--/Third row-->
+
+        </div>
+        <!--/First column-->
+
+        <!--Second column-->
+        <div class="col-md-6  offset-md-1 mb-2">
+          <img src="https://github.com/cwilliams3579/Choosen-uploads/blob/master/12tribes.png?raw=true" alt="" class="img-fluid z-depth-2 lion">
+        </div>
+        <!--/Second column-->
+
+      </div>
+      <!--/First row-->
+    </section>
+    <!--/Projects section v.4-->
+    <!--First row-->
+    <div class="row text-center">
+
+      <!--First column-->
+      <div class="col-lg-4 col-md-12 mb-r">
+
+        <!--Featured image-->
+        <div class="overlay hm-white-slight z-depth-2">
+          <iframe width="100%" height="300" src="https://www.youtube.com/embed/WpbXt04qWEk" frameborder="0" allowfullscreen></iframe>
+
+          <a>
+            <div class="mask waves-effect waves-light"></div>
+          </a>
+        </div>
+
+        <!--Excerpt-->
+        <div class="card-block">
+          <h3 class="exercise-text">School 1</h3>
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
+          <a class="btn btn-lg btn-outline-gold gold white-text" data-toggle="modal" data-target="#quick-look-ex"><i class="fa fa-eye left"></i> See more</a>
+        </div>
+
+      </div>
+      <!--/First column-->
+
+      <!--Second column-->
+      <div class="col-lg-4 col-md-6 mb-r">
+
+        <!--Featured image-->
+        <div class="overlay hm-white-slight z-depth-2">
+          <iframe width="100%" height="300" src="https://www.youtube.com/embed/4ykElSXlReU" frameborder="0" allowfullscreen></iframe>
+          <a>
+            <div class="mask waves-effect waves-light"></div>
+          </a>
+        </div>
+
+        <!--Excerpt-->
+        <div class="card-block">
+          <h3 class="exercise-text">School 2</h3>
+          <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime facere possimus.</p>
+          <a class="btn btn-lg btn-outline-gold gold white-text" data-toggle="modal" data-target="#quick-look-ex"><i class="fa fa-eye left"></i> See more</a>
+        </div>
+
+      </div>
+      <!--/Second column-->
+
+      <!--Third column-->
+      <div class="col-lg-4 col-md-6 mb-r">
+
+        <!--Featured image-->
+        <div class="overlay hm-white-slight z-depth-2">
+          <iframe width="100%" height="300" src="https://www.youtube.com/embed/L6P-NJNlUbA" frameborder="0" allowfullscreen></iframe>
+          <a>
+            <div class="mask waves-effect waves-light"></div>
+          </a>
+        </div>
+
+        <!--Excerpt-->
+        <div class="card-block">
+          <h3 class="exercise-text">School 3</h3>
+          <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.</p>
+          <a class="btn btn-lg btn-outline-gold gold white-text" data-toggle="modal" data-target="#quick-look-ex"><i class="fa fa-eye left"></i> See more</a>
+        </div>
+
+      <!--/Third column-->
+    </div>
+    <!--/First row-->
+  </section>
+  <!--/Projects section v.2-->
+
+  <!--Section: Testimonials v.4-->
+  <section class="section">
+
+    <!--Section heading-->
+    <h1 class="section-heading">Testimonials</h1>
+
+    <div class="row">
+      <!--Carousel Wrapper-->
+      <div id="multi-item-example" class="carousel testimonial-carousel slide carousel-multi-item" data-ride="carousel">
+
+        <!--Controls-->
+        <div class="controls-top">
+          <a class="btn-floating btn-small btn-warning " href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+          <a class="btn-floating btn-small btn-warning" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+        </div>
+        <!--/.Controls-->
+
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+          <li data-target="#multi-item-example" data-slide-to="0" class="active btn-warning"></li>
+          <li data-target="#multi-item-example" data-slide-to="1" class="btn-warning"></li>
+          <li data-target="#multi-item-example" data-slide-to="2" class="btn-warning"></li>
+        </ol>
+        <!--/.Indicators-->
+
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+          <!--First slide-->
+          <div class="carousel-item active">
+            <!--First column-->
+            <div class="col-md-4">
+
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4>Anna Deynah</h4>
+                <p class=""><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab. <i class="fas fa-quote-right"></i></p>
+
+                <!--Review-->
+                <div class="orange-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star-half"> </i>
+                </div>
+              </div>
+
+            </div>
+            <!--/First column-->
+
+            <!--Second column-->
+            <div class="col-md-4 hidden-sm-down">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4>John Doe</h4>
+                <p class=""><i class="fas fa-quote-left"></i> Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid. <i class="fas fa-quote-right"></i></p>
+
+                <!--Review-->
+                <div class="orange-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                </div>
+              </div>
+            </div>
+            <!--/Second column-->
+
+            <!--Third column-->
+            <div class="col-md-4 hidden-sm-down">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(5).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4>Abbey Clark</h4>
+                <p class=""><i class="fas fa-quote-left"></i> Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum. <i class="fas fa-quote-right"></i></p>
+
+                <!--Review-->
+                <div class="orange-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star-o"> </i>
+                </div>
+              </div>
+            </div>
+            <!--/Third column-->
+
+          </div>
+          <!--/.First slide-->
+
+          <!--Second slide-->
+          <div class="carousel-item">
+            <!--First column-->
+            <div class="col-md-4">
+
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4>Blake Dabney</h4>
+                <p class=""><i class="fas fa-quote-left"></i> Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid. <i class="fas fa-quote-right"></i></p>
+
+                <!--Review-->
+                <div class="orange-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star-half"> </i>
+                </div>
+              </div>
+
+            </div>
+            <!--/First column-->
+
+            <!--Second column-->
+            <div class="col-md-4 hidden-sm-down">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(6).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4>Andrea Clay</h4>
+                <p class=""><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab. <i class="fas fa-quote-right"></i></p>
+
+                <!--Review-->
+                <div class="orange-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                </div>
+              </div>
+            </div>
+            <!--/Second column-->
+
+            <!--Third column-->
+            <div class="col-md-4 hidden-sm-down">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(7).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4>Cami Gosse</h4>
+                <p class=""><i class="fas fa-quote-left"></i> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti. <i class="fas fa-quote-right"></i></p>
+
+                <!--Review-->
+                <div class="orange-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star-o"> </i>
+                </div>
+              </div>
+            </div>
+            <!--/Third column-->
+
+          </div>
+          <!--/.Second slide-->
+
+          <!--Third slide-->
+          <div class="carousel-item">
+            <!--First column-->
+            <div class="col-md-4">
+
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4>Bobby Haley</h4>
+                <p class=""><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab. <i class="fas fa-quote-right"></i></p>
+
+                <!--Review-->
+                <div class="orange-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                </div>
+              </div>
+
+            </div>
+            <!--/First column-->
+
+            <!--Second column-->
+            <div class="col-md-4 hidden-sm-down">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4>Elisa Janson</h4>
+                <p class=""><i class="fas fa-quote-left"></i> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti. <i class="fas fa-quote-right"></i></p>
+
+                <!--Review-->
+                <div class="orange-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star-half"> </i>
+                </div>
+              </div>
+            </div>
+            <!--/Second column-->
+
+            <!--Third column-->
+            <div class="col-md-4 hidden-sm-down">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4>Robert Jacobs</h4>
+                <p class=""><i class="fas fa-quote-left"></i> Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid. <i class="fas fa-quote-right"></i></p>
+
+                <!--Review-->
+                <div class="orange-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star-half"> </i>
+                </div>
+              </div>
+            </div>
+            <!--/Third column-->
+
+          </div>
+          <!--/.Third slide-->
+
+        </div>
+        <!--/.Slides-->
+
+      </div>
+      <!--/.Carousel Wrapper-->
+    </div>
+  </section>
+  <!--/Section: Testimonials v.4-->
+
+
+</div>
