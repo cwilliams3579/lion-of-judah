@@ -1,14 +1,17 @@
-<div class="container">
-    <div class="md-form">
-        <%= form_for([@post, @post.comments.build]) do |f| %>
-        <div class="md-form">
-            <i class="fa fa-pencil prefix fa-fonts"></i>
-            <%= f.text_area :description,  class: "md-text_area" %>
-        </div>
-        
-        <div class="mx-auto" style="width: 230px;">
-          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
-        </div>
-    <% end %>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <!-- Quick Reply -->
+  <div class="md-form mt-4">
+    <label for="quickReplyFormComment">Your comment</label>
+    <!--<textarea class="form-control md-textarea" id="quickReplyFormComment" rows="3"></textarea>-->
+    <%= f.text_area :description,  class: "form-control md-textarea" %>
+
+    <!--<div class="text-center my-4">-->
+    <!--  <button class="btn btn-default btn-sm btn-rounded" type="submit">Post</button>-->
+    <!--</div>-->
+      <div class="mx-auto my-4" style="width: 230px;">
+      <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
     </div>
-</div>
+  </div>
+<% end %>
+  
+    

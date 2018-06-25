@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
-  # has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy
   mount_uploader :image, ImageUploader
   validates :title, presence: true, length: {minimum: 3, maximum: 50}
   validates_uniqueness_of :title
