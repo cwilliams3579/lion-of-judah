@@ -5,7 +5,7 @@
 <section class="my-5">
 
   <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold text-center my-5 gold-text"><%= @book.title %></h2>
+  <h2 class="h1-responsive font-weight-bold text-center my-5 goldenrod"><%= @book.title %></h2>
   <!-- Section description -->
 
   <!-- Grid row -->
@@ -25,14 +25,14 @@
       <!-- Grid row -->
       <div class="row mb-3">
         <div class="col-md-1 col-2">
-          <i class="fa fa-book fa-2x gold-text"></i>
+          <i class="fa fa-book fa-2x goldenrod"></i>
         </div>
         <div class="col-md-11 col-10">
           <h5 class="font-weight-bold mb-3">Fantasy</h5>
-          <small class="font-weight-bold mb-3">Written by <%= @book.user.full_name %></small>
+          <small class="font-weight-bold mb-3">Written by <%= @book.user.full_name  %></small>
           <p class="grey-text"><%= @book.description %></p>
-          <%= link_to '', edit_book_path(@book), class: "fa fa-pencil fa-lg gold-text" %> |
-          <%= link_to '', books_path, class: "fas fa-undo-alt gold-text" %>
+          <%= link_to '', edit_book_path(@book), class: "fa fa-pencil fa-lg goldenrod" %> |
+          <%= link_to '', books_path, class: "fas fa-undo-alt goldenrod" %>
         </div>
       </div>
       <!-- Grid row -->

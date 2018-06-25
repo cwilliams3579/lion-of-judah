@@ -6,8 +6,11 @@
     <%= favicon_link_tag 'favicon.png' %>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Lion Of Judah" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
     <script>
@@ -19,14 +22,23 @@
           div1.innerHTML = "Loaded content for section "+num;
       }
     </script>
+
   </head>
   <body class="hidden-sn black-skin">
-  
-      <%= render 'layouts/navigation' %>
-
+       <%= render 'layouts/navigation' %>
+    <div class="container-fluid">
        <%= render 'layouts/messages' %>
        <%= yield %>
+    </div>
+     
     <%= render 'layouts/footer' %>
     <%= render 'layouts/scripts' %>
+     
+      <!-- Bootstrap core JavaScript -->
+    <%# <script src="vendor/jquery/jquery.min.js"></script> %>
+    <script src="https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-simple-sidebar/master/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+   
   </body>
 </html>

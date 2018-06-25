@@ -1,4 +1,6 @@
 /* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
+
+
 html,
 body,
 .view {
@@ -39,13 +41,6 @@ body,
                 radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
 }
 
-.md-form {
-  .card {
-    background-image: url(https://www.xmple.com/wallpaper/beehive-brown-black-hexagon-honeycomb-1920x1080-c2-000000-daa520-l2-9-117-a-15-f-5.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-}
 
 .mt {
   margin-top: 100px;
@@ -63,9 +58,15 @@ body,
 }
 
 .gold-text, .card-title a {
-  color: goldenrod !important;
+  color: #DA22FF,
+  #9733EE !important;
 }
 
+.pg-text {
+  background: -webkit-linear-gradient(#DA22FF, #9733EE) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .btn-outline-gold {
   border: 2px solid #D5AD6D !important;
@@ -90,32 +91,29 @@ body,
 }
 
 
-.black-skin .carousel-multi-item .carousel-indicators li, .black-skin .carousel-multi-item .carousel-indicators li.active, .black-skin .carousel-multi-item .controls-top>a {
-    background-color: goldenrod !important;
+.black-skin .carousel-multi-item .carousel-indicators li, .carousel-indicators li.active, .black-skin .carousel-multi-item .controls-top>a {
+    background-color: purple;
 }
 
 
 
-.container-small .card {
-  background: #000000;
-
-}
-
+.container-small .card,
 .card-block {
   background: #000000;
 }
 
+
 .fa-fonts {
-  color: goldenrod;
+  color: goldenrod !important;
 }
 
 .card .card-block .form-header {
   background: transparent;
-  border: 2px solid goldenrod;
+  border: 2px solid purple;
 }
 
 .container-small .card {
-  border: 4px solid goldenrod;
+  border: 4px solid purple;
 }
 
 .gal-img {
@@ -135,14 +133,15 @@ header, main, footer {
 
 
 .btn-img {
-    background: url(https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true) no-repeat;
-    width: 10%;
+    width: 40% !important;
     background-position: center;
     background-size: contain;
-    text-indent:30px;
+    // text-indent:30px;
     // display:block;
     cursor: pointer;
 }
+
+
 
 .fm-fonts {
   color: #fff !important;
@@ -152,4 +151,20 @@ header, main, footer {
 .pt-img {
   width: 350px !important;
   height: 100% !important;
+}
+
+.mt {
+  margin-top: 100px !important;
+}
+
+.mt-2x {
+  margin-top: 200px !important;
+}
+
+.mb {
+  margin-bottom: 100px !important;
+}
+
+.mb-2x {
+  margin-bottom: 200px !important;
 }

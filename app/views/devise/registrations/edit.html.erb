@@ -2,11 +2,12 @@
 <div class="container-small mt-2x white-text">
   <div class="card">
     <div class="card-block" style="background: #000000;">
-      <div class="form-header">
+      <div class="form-header" style="background: #000000; font-family: 'UnifrakturCook', cursive !important;">
         <h3 class="gold-text">Edit <%= resource_name.to_s.humanize %></h3>
       </div>
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
         <%= devise_error_messages! %>
+        
         <div class="md-form">
           <i class="fa fa-user goldenrod prefix"></i>
           <%= f.text_field :first_name, :autofocus => true, class: 'form-control fm-fonts' %>
@@ -40,8 +41,8 @@
             <%= f.password_field :current_password, class: 'form-control fm-fonts' %>
           </div>
         </fieldset>
-        <div class="md-form center">
-          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true", onclick: "loadContent(1)", class: " waves-effect waves-light btn-img") %>
+        <div class="mx-auto" style="width: 230px;">
+          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
         </div>
       <% end %>
       </div>

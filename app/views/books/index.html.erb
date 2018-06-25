@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container mt">
+<div class="container mt-2x mb">
   <!-- Section: Products v.1 -->
 <section class="text-center my-5">
 
@@ -29,9 +29,9 @@
         <div class="card-body card-body-cascade text-center">
           <!-- Category & Title -->
 
-          <h4 class="card-title">
+          <h4 class="card-title gold-text">
             <strong>
-              <%= link_to book.title, book_path(book) %>
+              <%= link_to book.title, book_path(book), style:"font-family: 'UnifrakturCook', cursive !important; color:goldenrod;" %>
             </strong>
           </h4>
           <!--Rating-->
@@ -89,13 +89,13 @@
   <!-- Grid row -->
 </section>
 <!-- Section: Products v.1 -->
-</div>
-
-
-
-
 <br>
 
 <div class="center">
-  <%= link_to '', new_book_path, class: "fas fa-book fa-2x gold-text" %>
+  <%= link_to '', new_book_path, class: "fas fa-book fa-2x goldenrod" %>
 </div>
+</div>
+
+
+
+

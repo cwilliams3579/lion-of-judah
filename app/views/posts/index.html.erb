@@ -1,4 +1,4 @@
-<div class="container mt">
+<div class="container mt-2x mb">
 
   <!--Carousel Wrapper-->
 <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
@@ -73,13 +73,12 @@
     <div class="col-lg-7 col-xl-8">
 
       <!-- Post title -->
-      <h3 class="font-weight-bold mb-3"><strong><%= link_to post.title, post_path(post), class: "gold-text" %> </strong></h3>
+      <h3 class="font-weight-bold mb-3"><strong><%= link_to post.title, post_path(post), class: "title-font" %> </strong></h3>
       <!-- Excerpt -->
-      <p class="dark-grey-text"><%= post.description %></p>
+      <p class="dark-grey-text"><%= post.description.truncate(300) %></p>
       <!-- Post data -->
-      <p>by <a class="font-weight-bold"> <%= post.user.full_name %> </a>, &nbsp;<%= post.created_at.strftime("%m/%d/%Y") %></p>
+      <p>by <a class="font-weight-bold"> <%= post.user.full_name.titleize %> </a>, &nbsp;<%= post.created_at.strftime("%m/%d/%Y") %></p>
       <!-- Read more button -->
-      <!-- <a class="fa fa-eye fa-2x gold-text"> </a> -->
       <%= link_to '', post_path(post), class: "gold-text fa fa-eye fa-2x" %>
 
     </div>
@@ -95,9 +94,8 @@
 <!-- Section: Blog v.3 -->
 </div>
 
-
 <br>
 
-<div class="center">
-  <%= link_to '', new_post_path, onclick: "loadContent(1)", class: "fa fa-book fa-2x gold-text", toggle: "tooltip", placement: "top", title:"New Post" %>
+<div class="center mb">
+  <%= link_to '', new_post_path, onclick: "loadContent(1)", class: "fa fa-book fa-2x goldenrod", toggle: "tooltip", placement: "top", title:"New Post" %>
 </div>

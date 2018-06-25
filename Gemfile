@@ -25,7 +25,7 @@ group :test do
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'administrate'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'bourbon'
 gem 'devise'
 gem 'high_voltage'
@@ -42,6 +42,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
+  #gem 'pg'
   gem 'rails_12factor'
 end

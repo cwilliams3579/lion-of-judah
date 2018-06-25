@@ -1,8 +1,8 @@
-<div class="container-small">
-  <div class="card mt">
+<div class="container-small mt-2x">
+  <div class="card">
     <div class="card-block">
-      <div class="form-header  btn-outline-gold">
-        <h3><%= current_user.full_name if current_user.present? %></h3>
+      <div class="form-header title-font" style="background:#000000; font-family: 'UnifrakturCook', cursive !important;">
+        <h3 class="h3-responsive goldenrod"><%= @book.title if @book.present? %></h3>
       </div>
       <%= form_for(book) do |f| %>
         <% if book.errors.any? %>
@@ -19,25 +19,27 @@
 
         <div class="btn-group">
           <i class="fa fa-camera-retro fa-2x prefix fa-fonts"></i> &nbsp;
-          <%= image_tag(book.image.url) if book.image? %><br>
           <%= f.file_field :image, class:"white-text" %>
           <div class="center">
             <%= f.hidden_field :image_cache %>
           </div>
         </div>
+          <div class="container" style="width:200px;">
+            <%= image_tag(book.image.url) if book.image? %><br>
+          </div>
 
         <div class="md-form">
           <i class="fa fa-tag prefix fa-fonts"></i>
-          <%= f.text_field :title, placeholder: "Enter title", :autofocus => true, class: 'form-control gold-text' %>
+          <%= f.text_field :title, placeholder: "Enter title", :autofocus => true, class: 'form-control white-text' %>
         </div>
 
         <div class="md-form">
           <i class="fa fa-pencil prefix fa-fonts"></i>
-          <%= f.text_area :description, placeholder: "Enter description", class: 'md-textarea gold-text' %>
+          <%= f.text_area :description, placeholder: "Enter description", class: 'md-textarea white-text' %>
         </div>
 
-        <div class="md-form center">
-          <%= f.button '', class: "fa fa-paw fa-3x waves-effect waves-light", style: "background:transparent; border:none; color:goldenrod;", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+        <div class="mx-auto" style="width: 230px;">
+          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
         </div>
       <% end %>
     </div>

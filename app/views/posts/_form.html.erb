@@ -1,8 +1,8 @@
-<div class="container-small mt">
-  <div class="card mb">
+<div class="container-small mt-2x mb">
+  <div class="card">
     <div class="card-block">
-      <div class="form-header  btn-outline-gold">
-        <h3><%= current_user.full_name if current_user.present? %></h3>
+      <div class="form-header" style="background:#000000;">
+        <h3 class="h3-responsive goldenrod" style="font-family: 'UnifrakturCook', cursive !important;"><%= current_user.full_name if current_user.present? %></h3>
       </div>
       <%= form_for(post) do |f| %>
         <% if post.errors.any? %>
@@ -19,7 +19,7 @@
 
         <div class="btn-group">
           <i class="fa fa-camera-retro fa-2x prefix fa-fonts"></i> &nbsp;
-          <%#= image_tag(post.image.url) if post.image? %><br>
+          <%= image_tag(post.image.url) if post.image? %><br>
           <%= f.file_field :image, class:"white-text" %>
           <%= f.hidden_field :image_cache %>
         </div>
@@ -34,8 +34,8 @@
           <%= f.text_area :description, placeholder: "Enter description", class: 'md-textarea white-text' %>
         </div>
 
-        <div class="md-form center">
-          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-logo.png?raw=true", onclick:"loadContent(1)", class: " waves-effect waves-light btn-img", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>"}) %>
+        <div class="mx-auto" style="width: 230px;">
+            <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
         </div>
       <% end %>
     </div>

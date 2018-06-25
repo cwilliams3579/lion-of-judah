@@ -1,14 +1,18 @@
+.navbar-brand, .title-font {
+  font-family: 'UnifrakturCook', cursive !important;
+  color: #DAA520 !important;
+}
+
 $primary-green: #21403F;
 $indigo: #3D466D;
 $orange-grad: #fc4a1a, #f7b733;
-$gold: #FF9900;
+$gold: #DAA520;
 
 .gold {
   background: $gold;
-
 }
 
-.golden-text {
+.gold-text {
   color: $gold !important;
 }
 
@@ -186,12 +190,17 @@ $gold: #FF9900;
       }
     }
 
-    .side-nav .logo-wrapper {
-      height: 150px !important;
+    // .side-nav .logo-wrapper {
+    //   height: 350px !important;
+    // }
+
+    .lion-btn {
+      width: 100px !important;
     }
 
+
     .side-nav .logo-wrapper, .side-nav .logo-wrapper a {
-      // height:10vh !important;
+      height:10vh !important;
       width: 100%;
       background-color: transparent;
     }
@@ -261,12 +270,11 @@ $gold: #FF9900;
 // }
 
  .md-form .prefix.active {
-  color: goldenrod;
+  color: purple;
 }
 
 .md-form .prefix.active {
-  color: -webkit-linear-gradient(goldenrod) !important;
-  background-color: goldenrod;
+  color: -webkit-linear-gradient(purple) !important;
 }
 
  .gallery-text {
@@ -304,7 +312,7 @@ $gold: #FF9900;
 .social a:hover,
 .social a:focus {
   // outline: 0;
-  background-color:goldenrod !important;
+//   background-color:goldenrod;
 
   background: -webkit-linear-gradient(#DAA520, #DAA520);
   background: -moz-linear-gradient(#DAA520, #DAA520);

@@ -1383,6 +1383,7 @@ button.bg-light:focus {
 .border-light {
   border-color: #e0e0e0 !important; }
 
+/*
 @font-face {
   font-family: "Roboto";
   src: local(Roboto Thin), url("../font/roboto/Roboto-Thin.eot");
@@ -1412,6 +1413,7 @@ button.bg-light:focus {
   src: url("../font/roboto/Roboto-Bold.eot");
   src: url("../font/roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../font/roboto/Roboto-Bold.woff2") format("woff2"), url("../font/roboto/Roboto-Bold.woff") format("woff"), url("../font/roboto/Roboto-Bold.ttf") format("truetype");
   font-weight: 700; }
+*/
 
 body {
   font-family: "Roboto", sans-serif;
@@ -6824,7 +6826,7 @@ body.scrollable {
     -o-transition: color 0.2s;
     transition: color 0.2s; }
     .md-form .prefix.active {
-      color: goldenrod; }
+      color: purple; }
   .md-form.form-lg label {
     font-size: 1.25rem; }
     .md-form.form-lg label.active {

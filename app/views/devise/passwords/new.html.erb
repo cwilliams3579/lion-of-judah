@@ -3,10 +3,12 @@
     <h3>Forgot your password?</h3>
     <p>We'll send password reset instructions.</p>
     <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :email %>
+    <div class="md-form">
       <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
     </div>
-     <%= f.submit 'Reset Password', :class => 'button right' %>
+     <%#= f.submit 'Reset Password', :class => 'button right' %>
+     <div class="mx-auto" style="width: 230px;">
+        <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
+    </div>
   <% end %>
 </div>
