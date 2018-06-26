@@ -10,7 +10,7 @@
 
       <!-- Card -->
       <div class="card card-cascade wider reverse">
-
+      <%= render 'layouts/messages' %>
         <!-- Card image -->
         <div class="view view-cascade overlay">
           <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(142).jpg" alt="Sample image">
@@ -70,8 +70,14 @@
  
       
       <h3 class="h3-responsive goldenrod text-center">Add a comment</h3>
+      
       <%= render 'comments/form'  %>
-      <%= render 'comments/comment'  %>
+      
+      <% if @post.comments != 0 %>
+        <%= render partial: 'comments/comments', object: @comments  %>
+      <% else %>
+        <h3 class="h3-responsive goldenrod text-center">No Comments Yet! </h3>
+      <% end %>
     </div>
     <!-- Grid column -->
 

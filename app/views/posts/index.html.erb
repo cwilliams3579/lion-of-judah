@@ -79,7 +79,7 @@
       <!-- Post data -->
       <p>by <a class="font-weight-bold"> <%= post.user.full_name.titleize %> </a>, &nbsp;<%= post.created_at.strftime("%m/%d/%Y") %></p>
       <!-- Read more button -->
-      <%= link_to '', post_path(post), class: "gold-text fa fa-eye fa-2x" %>
+      <%= link_to '', post_path(post), class: "gold-text fa fa-eye fa-2x", toggle: "tooltip", placement: "top", title:"Read More" %>
 
     </div>
     <!-- Grid column -->
@@ -96,6 +96,10 @@
 
 <br>
 
+<div align="center">
+  <%= will_paginate(@posts, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer)  %>
+</div>
+
 <div class="center mb">
-  <%= link_to '', new_post_path, onclick: "loadContent(1)", class: "fa fa-book fa-2x goldenrod", toggle: "tooltip", placement: "top", title:"New Post" %>
+  <%= link_to '', new_post_path, onclick: "loadContent(1)", class: "fas fa-pencil-alt fa-2x goldenrod", toggle: "tooltip", placement: "top", title:"New Post" %>
 </div>

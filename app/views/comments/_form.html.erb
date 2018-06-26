@@ -1,4 +1,4 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
+<%= form_for([@post, @comment], :html => { role: "form" }) do |f| %>
   <!-- Quick Reply -->
   <div class="md-form mt-4">
     <label for="quickReplyFormComment">Your comment</label>

@@ -1,10 +1,11 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /books/1
