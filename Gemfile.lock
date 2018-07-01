@@ -55,6 +55,7 @@ GEM
       momentjs-rails (~> 2.8)
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
+    alertifyjs-rails (1.11.1)
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -274,6 +275,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  alertifyjs-rails
   better_errors
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.1, >= 4.1.1)
