@@ -1,0 +1,54 @@
+<div class="container-small mt-2x">
+  <div class="card">
+    <div class="card-block">
+      <div class="form-header title-font" style="background:#000000; font-family: 'UnifrakturCook', cursive !important;">
+        <h3 class="h3-responsive goldenrod">Review</h3>
+      </div>
+      <%= form_with(model: review, local: true) do |form| %>
+        <% if review.errors.any? %>
+          <div id="error_explanation">
+            <h2 class="text-danger"><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+      
+            <ul>
+            <% review.errors.full_messages.each do |message| %>
+              <li class="text-danger"><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        
+         <!--Rating-->
+          <ul class="rating center">
+            <li>
+              <i class="fa fa-star fa-2x fa-spin-hover goldenrod"></i>
+            </li>
+            <li>
+              <i class="fa fa-star fa-2x fa-spin-hover goldenrod"></i>
+            </li>
+            <li>
+              <i class="fa fa-star fa-2x fa-spin-hover goldenrod"></i>
+            </li>
+            <li>
+              <i class="fa fa-star fa-2x fa-spin-hover goldenrod"></i>
+            </li>
+            <li>
+              <i class="fa fa-star-o fa-2x fa-spin-hover goldenrod"></i>
+            </li>
+          </ul>
+        <div class="md-form">
+          <%= form.label :rating %>
+          <%= form.number_field :rating, class: "form-control white-text" %>
+        </div>
+      
+        <div class="md-form">
+          <%= form.label :comment %>
+          <%= form.text_area :comment, placeholder: "Enter description", class: "md-textarea white-text" %>
+        </div>
+      
+        <div class="mx-auto" style="width: 230px;">
+          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

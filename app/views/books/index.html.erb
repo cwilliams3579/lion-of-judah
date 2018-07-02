@@ -73,12 +73,13 @@
               <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
                 <i class="fa fa-shopping-cart grey-text ml-3"></i>
               </a>
-           
+           <% if current_user && (current_user.admin?) %>
                &nbsp;&nbsp;
                 <%= link_to '', edit_book_path(book), class: "fa fa-pencil gold-text", toggle: "tooltip", placement: "top", title:"Edit" %>
 
               &nbsp;&nbsp;
               <%= link_to '', book, class: "fa fa-trash active",toggle: "tooltip", placement: "top", title:"Destroy", onclick:"loadContent(1)", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>  
             </span>
           </div>
         </div>
