@@ -36,19 +36,7 @@
             <!--Rating-->
             <ul class="rating">
               <li>
-                <i class="fa fa-star"></i>
-              </li>
-              <li>
-                <i class="fa fa-star"></i>
-              </li>
-              <li>
-                <i class="fa fa-star"></i>
-              </li>
-              <li>
-                <i class="fa fa-star"></i>
-              </li>
-              <li>
-                <i class="fas fa-star-half"></i>
+                <div class="star-rating" data-turbolinks="false" data-score= <%= review.rating %> ></div>
               </li>
             </ul>
             <!-- Description -->
@@ -100,5 +88,12 @@
 </div>
 
 
-
-
+<script type="text/javascript">
+  $('.star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+</script>

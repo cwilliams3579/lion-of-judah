@@ -20,25 +20,14 @@
          <!--Rating-->
           <ul class="rating center">
             <li>
-              <i class="fa fa-star fa-2x fa-spin-hover goldenrod"></i>
+              <div id="star-rating" data-turbolinks="false" data-score= <%= review.rating %> ></div>
             </li>
-            <li>
-              <i class="fa fa-star fa-2x fa-spin-hover goldenrod"></i>
-            </li>
-            <li>
-              <i class="fa fa-star fa-2x fa-spin-hover goldenrod"></i>
-            </li>
-            <li>
-              <i class="fa fa-star fa-2x fa-spin-hover goldenrod"></i>
-            </li>
-            <li>
-              <i class="fa fa-star-o fa-2x fa-spin-hover goldenrod"></i>
-            </li>
+         
           </ul>
-        <div class="md-form">
-          <%= f.label :rating %>
-          <%= f.number_field :rating, class: "form-control white-text" %>
-        </div>
+        <!--<div class="md-form">-->
+        <!--  <%#= f.label :rating %>-->
+        <!--  <%#= f.number_field :rating, class: "form-control white-text" %>-->
+        <!--</div>-->
       
         <div class="md-form">
           <%= f.label :comment %>
@@ -52,3 +41,10 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $('#star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
+    scoreName: 'review[rating]'
+  });
+</script>

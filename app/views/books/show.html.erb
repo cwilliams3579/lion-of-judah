@@ -14,8 +14,9 @@
       <!-- Grid column -->
       <div class="col-lg-5 mb-lg-0 mb-5">
         <!--Image-->
-        <!-- <img src="https://mdbootstrap.com/img/Photos/Others/images/83.jpg" alt="Sample project image" class="img-fluid rounded z-depth-1"> -->
-        <%= image_tag(@book.image.url, class: "img-fluid rounded z-depth-1 mb-2x", alt: "Sample project image") %>
+        <%= image_tag(@book.image.url, class: "img-fluid rounded z-depth-1", alt: "Sample project image") %> 
+        <div class="star-rating" data-turbolinks="false" data-score= <%= @avg_rating %> ></div> <br>
+        <p><%= "#{@reviews.length} reviews" %></p>
       </div>
       <!-- Grid column -->
   
@@ -66,14 +67,10 @@
       <!--First slide-->
       <div class=" active">
         <div class="testimonial">
-          <!--Avatar-->
-          <!--<div class="avatar mx-auto mb-4">-->
-          <!--  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid" alt="First sample avatar image">-->
-          <!--</div>-->
           <!--Content-->
           <div class="star-rating" data-turbolinks="false" data-score= <%= review.rating %> ></div>
-          <p>
-            <i class="fa fa-quote-left"></i> <%= review.comment %>
+          <p class="grey-text">
+            <i class="fa fa-quote-left"></i> <%= h(review.comment).gsub(/\n/, '<br/>').html_safe %> <i class="fa fa-quote-right"></i>
           </p>
           <!--Review-->
    <hr class="my-5">
