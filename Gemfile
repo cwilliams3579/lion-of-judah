@@ -39,6 +39,7 @@ gem 'mini_magick'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'hirb'
   gem 'hub', :require=>nil
   gem 'rails_layout'
 end

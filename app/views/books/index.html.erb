@@ -15,7 +15,6 @@
         <div class="card card-cascade narrower card-ecommerce">
           <!-- Card image -->
           <div class="view view-cascade overlay">
-            <!-- <img src="https://www.rastaseed.com/wp-content/uploads/2008/03/lion-of-judah-poster.jpg" class="card-img-top" alt="sample photo"> -->
             <%= image_tag book.image.url, class: "card-img-top", alt: "sample photo", style: "width:198px; height: 297px;" %>
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -36,7 +35,8 @@
             <!--Rating-->
             <ul class="rating">
               <li>
-                <div class="star-rating" data-turbolinks="false" data-score= <%= review.rating %> ></div>
+                
+                <div id="star-rating" data-turbolinks="false" data-score= <%= @avg_rating %> ></div>
               </li>
             </ul>
             <!-- Description -->
@@ -61,7 +61,7 @@
                 </a>
                 <% if current_user && (current_user.admin?) %>
                    &nbsp;
-                  <%= link_to '', edit_book_path(book), class: "fa fa-pencil gold-text", toggle: "tooltip", placement: "top", title:"Edit" %>
+                  <%= link_to '', edit_book_path(book), class: "fas fa-pencil-alt gold-text", toggle: "tooltip", placement: "top", title:"Edit" %>
   
                   &nbsp;
                 <%= link_to '', book, class: "fa fa-trash active",toggle: "tooltip", placement: "top", title:"Destroy", onclick:"loadContent(1)", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -89,11 +89,8 @@
 
 
 <script type="text/javascript">
-  $('.star-rating').raty({
+  $('#star-rating').raty({
     path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
-    readOnly: true,
-    score: function() {
-      return $(this).attr('data-score')
-    }
+    scoreName: 'review[rating]'
   });
 </script>
