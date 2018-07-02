@@ -28,7 +28,7 @@
           <i class="fa fa-book fa-2x goldenrod"></i>
         </div>
         <div class="col-md-11 col-10">
-          <h5 class="font-weight-bold mb-3">Fantasy</h5>
+          <h5 class="font-weight-bold mb-3"> <%= link_to Category.find(@book.category_id).name, category_path(@book.category_id) %> </h5>
           <small class="font-weight-bold mb-3">Written by <%= @book.user.full_name  %></small>
           <p class="grey-text"><%= @book.description %></p>
           <%= link_to '', edit_book_path(@book), class: "fa fa-pencil fa-lg goldenrod" %> |

@@ -1,0 +1,28 @@
+<div class="container-small mt-2x">
+  <div class="card">
+    <div class="card-block">
+      <div class="form-header title-font" style="background:#000000; font-family: 'UnifrakturCook', cursive !important;">
+        <h3 class="h3-responsive goldenrod"><%= Category.name if @category.present? %></h3>
+      </div>
+      <%= form_with(model: category, local: true) do |f| %>
+        <% if category.errors.any? %>
+          <div id="error_explanation red-text">
+            <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+            <ul>
+              <% category.errors.full_messages.each do |message| %>
+                <li class="red-text"><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+       <div class="md-form">
+          <i class="fa fa-tag prefix fa-fonts"></i>
+          <%= f.text_field :name, placeholder: "Enter title", :autofocus => true, class: 'form-control white-text' %>
+        </div>
+        <div class="mx-auto" style="width: 230px;">
+          <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
+        </div>
+      <% end %>
+   </div>
+  </div>
+</div>

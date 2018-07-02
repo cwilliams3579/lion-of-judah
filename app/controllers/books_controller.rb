@@ -1,16 +1,23 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.paginate(page: params[:page], per_page: 5)
+    if params[:category].blank?
+      @books = Book.paginate(page: params[:page], per_page: 5).order("created_at DESC")
+      # @books = Book.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @books = Book.where(category_id: @category_id).order("created_at DESC")
+    end
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+    @categories = Category.all
   end
 
   # GET /books/new
@@ -72,6 +79,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :description, :image, :user_id)
+      params.require(:book).permit(:title, :description, :image, :user_id, :category_id)
     end
 end

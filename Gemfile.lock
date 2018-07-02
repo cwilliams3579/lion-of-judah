@@ -67,6 +67,8 @@ GEM
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
     bindex (0.5.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.3.0)
       msgpack (~> 1.0)
     bootstrap (4.1.1)
@@ -108,6 +110,7 @@ GEM
     crass (1.0.4)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
+    debug_inspector (0.0.3)
     devise (4.4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -277,6 +280,7 @@ DEPENDENCIES
   administrate
   alertifyjs-rails
   better_errors
+  binding_of_caller
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.1, >= 4.1.1)
   bootstrap-will_paginate

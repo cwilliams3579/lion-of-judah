@@ -11,7 +11,7 @@
 
             <ul>
             <% book.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
+              <li class="red-text"><%= message %></li>
             <% end %>
             </ul>
           </div>
@@ -27,6 +27,11 @@
           <div class="container" style="width:200px;">
             <%= image_tag(book.image.url) if book.image? %><br>
           </div>
+          
+          <div class="md-form">
+          <%= f.label :category_id %> <br>
+          <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"}, {class: "select_tag btn btn-default"} %>
+        </div>
 
         <div class="md-form">
           <i class="fa fa-tag prefix fa-fonts"></i>

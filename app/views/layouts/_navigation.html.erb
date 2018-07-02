@@ -14,17 +14,93 @@
           <a href="/" class="navbar-brand text-center white-text" style="font-family: 'UnifrakturCook', cursive !important; font-size:2em !important; color: #DAA520 !important;">Lion Of Judah</a>
       </li>
       <!--/. Logo -->
-
-      <!--Search Form-->
+      <!--Social-->
+                <li>
+                    <ul class="social">
+                        <li><a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+                        <li><a href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
+                        <li><a href="#" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+                        <li><a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+                    </ul>
+                </li>
+                <!--/Social-->
+                <!--Search Form-->
+                <li>
+                    <form class="search-form" role="search">
+                        <div class="form-group md-form mt-0 pt-1 waves-light">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </form>
+                </li>
+                <!--/.Search Form-->
+      
+      <!-- Side navigation links -->
       <li>
-        <form class="search-form mt" role="search">
-          <div class="form-group md-form mt-0 pt-1 waves-light">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-        </form>
+          <ul class="collapsible collapsible-accordion">
+              <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-book"></i> Books<i class="fa fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                      <ul class="list-unstyled">
+                          <li><a href="/books" class="waves-effect">Books</a>
+                          </li>
+                          <li><a href="/books/new" class="waves-effect">New Book</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye"></i> Browse<i class="fa fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                      <ul class="list-unstyled">
+                          <li>
+                            <% Category.all.each do |category| %>
+                              <%= link_to category.name, books_path(category: category.name), class: "dropdown-item" %>
+                            <% end %>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera-retro"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                      <ul class="list-unstyled">
+                          <li><a href="/pages/gallery" class="waves-effect">Image Gallery</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                      <ul class="list-unstyled">
+                          <li><a href="/pages/about" class="waves-effect">About Me</a>
+                          </li>
+                          <li><a href="#" class="waves-effect">About Us</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope-o"></i> Contact me<i class="fa fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                      <ul class="list-unstyled">
+                          <li><a href="#" class="waves-effect">FAQ</a>
+                          </li>
+                          <li><a href="#" class="waves-effect">Write a message</a>
+                          </li>
+                          <li><a href="#" class="waves-effect">FAQ</a>
+                          </li>
+                          <li><a href="#" class="waves-effect">Write a message</a>
+                          </li>
+                          <li><a href="#" class="waves-effect">FAQ</a>
+                          </li>
+                          <li><a href="#" class="waves-effect">Write a message</a>
+                          </li>
+                          <li><a href="#" class="waves-effect">FAQ</a>
+                          </li>
+                          <li><a href="#" class="waves-effect">Write a message</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+          </ul>
       </li>
-      <!--/.Search Form-->
-
+      <!-- Side navigation links -->
     </ul>
     <div class="sidenav-bg mask-strong"></div>
   </div>
@@ -47,6 +123,9 @@
           <i class="fa fa-book"></i>
           <span class="clearfix d-none d-sm-inline-block">Books</span></a>
       </li>
+
+      
+      
       <li class="nav-item">
         <a href="/posts" class="nav-link">
           <i class="fa fa-comments-o"></i>
@@ -58,7 +137,7 @@
           <span class="clearfix d-none d-sm-inline-block">Gallery</span></a>
       </li>
       <li class="nav-item">
-        <%#= link_to gravatar_for(current_user), edit_user_registration_path,class: "nav-link" %>
+        <%#= link_to gravatar_for(current_user), edit_user_registration_path, class: "nav-link" %>
         <span class="clearfix d-none d-sm-inline-block"></span>
       </li>
       <% if current_user %>
