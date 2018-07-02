@@ -1,8 +1,8 @@
 <div class="container-small mt-2x mb">
-  <div class="card">
+  <div class="card purple-border-4x">
     <div class="card-block">
-      <div class="form-header" style="background:#000000;">
-        <h3 class="h3-responsive goldenrod" style="font-family: 'UnifrakturCook', cursive !important;"><%= current_user.full_name if current_user.present? %></h3>
+      <div class="form-header">
+        <h3 class="h3-responsive title-fonts"><%= current_user.full_name if current_user.present? %></h3>
       </div>
       <%= form_for(post) do |f| %>
         <% if post.errors.any? %>

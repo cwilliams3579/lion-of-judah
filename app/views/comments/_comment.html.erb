@@ -2,7 +2,6 @@
   <!--Section: Comments-->
   <section class="my-5">
     <!-- Card header -->
-    <!--<div class="card-header border-0 font-weight-bold black white-text"><%= pluralize(@post.comments.count, 'Comment') %> </div>-->
       <div class="media d-block d-md-flex mt-4">
         <!--<img class="card-img-64 rounded-circle z-depth-1 d-flex mx-auto mb-3" src="https://mdbootstrap.com/img/Photos/Avatars/img (27).jpg" alt="Generic placeholder image">-->
         <%= link_to gravatar_for(current_user), edit_user_registration_path, size: 64, :class => 'gravatar' %>
