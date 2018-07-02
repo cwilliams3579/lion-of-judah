@@ -1,49 +1,98 @@
-<div class="container mt-2x">
-  <!-- Projects section v.3 -->
-<section class="my-5">
-
-  <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold text-center my-5 goldenrod"><%= @book.title %></h2>
-  <!-- Section description -->
-
-  <!-- Grid row -->
-  <div class="row">
-
-    <!-- Grid column -->
-    <div class="col-lg-5 mb-lg-0 mb-5">
-      <!--Image-->
-      <!-- <img src="https://mdbootstrap.com/img/Photos/Others/images/83.jpg" alt="Sample project image" class="img-fluid rounded z-depth-1"> -->
-      <%= image_tag(@book.image.url, class: "img-fluid rounded z-depth-1 mb-2x", alt: "Sample project image") %>
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="col-lg-7">
-
-      <!-- Grid row -->
-      <div class="row mb-3">
-        <div class="col-md-1 col-2">
-          <i class="fa fa-book fa-2x goldenrod"></i>
+<div class="row">
+  
+  <div class="col-md-6 mt-2x">
+    <!-- Projects section v.3 -->
+  <section class="my-5">
+  
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center my-5 goldenrod"><%= @book.title %></h2>
+    <!-- Section description -->
+  
+    <!-- Grid row -->
+    <div class="row">
+  
+      <!-- Grid column -->
+      <div class="col-lg-5 mb-lg-0 mb-5">
+        <!--Image-->
+        <!-- <img src="https://mdbootstrap.com/img/Photos/Others/images/83.jpg" alt="Sample project image" class="img-fluid rounded z-depth-1"> -->
+        <%= image_tag(@book.image.url, class: "img-fluid rounded z-depth-1 mb-2x", alt: "Sample project image") %>
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-lg-7">
+  
+        <!-- Grid row -->
+        <div class="row mb-3">
+          <div class="col-md-1 col-2">
+            <i class="fa fa-book fa-2x goldenrod"></i>
+          </div>
+          <div class="col-md-11 col-10">
+            <h5 class="font-weight-bold mb-3"> <%= link_to Category.find(@book.category_id).name, category_path(@book.category_id), class: "grey-text" %> </h5>
+            <small class="font-weight-bold mb-3">Written by <%= @book.user.full_name  %></small>
+            <p class="grey-text"><%= @book.description %></p>
+            <% if current_user && (current_user.admin?) %>
+              <%= link_to '', edit_book_path(@book), class: "fa fa-pencil fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Edit" %> &nbsp;
+              <%= link_to '', @book, class: "fa fa-trash text-danger", toggle: "tooltip", placement: "top", title:"Delete", onclick:"loadContent(1)", :method => :delete, :data => {:confirm => "You Sure?"} %> &nbsp;
+            <% else %>
+              <%= link_to '', new_book_review_path(@book), class: "fa fa-pencil fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Write A Review!" %> &nbsp;
+            <% end %>
+              <%= link_to '', books_path, class: "fas fa-undo-alt goldenrod", toggle: "tooltip", placement: "top", title:"Back" %>
+          </div>
         </div>
-        <div class="col-md-11 col-10">
-          <h5 class="font-weight-bold mb-3"> <%= link_to Category.find(@book.category_id).name, category_path(@book.category_id), class: "grey-text" %> </h5>
-          <small class="font-weight-bold mb-3">Written by <%= @book.user.full_name  %></small>
-          <p class="grey-text"><%= @book.description %></p>
-          <% if current_user && (current_user.admin?) %>
-            <%= link_to '', edit_book_path(@book), class: "fa fa-pencil fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Edit" %> &nbsp;
-            <%= link_to '', @book, class: "fa fa-trash text-danger", toggle: "tooltip", placement: "top", title:"Delete", onclick:"loadContent(1)", :method => :delete, :data => {:confirm => "You Sure?"} %> &nbsp;
-          <% else %>
-            <%= link_to '', new_book_review_path(@book), class: "fa fa-pencil fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Write A Review!" %> &nbsp;
-          <% end %>
-            <%= link_to '', books_path, class: "fas fa-undo-alt goldenrod", toggle: "tooltip", placement: "top", title:"Back" %>
+        <!-- Grid row -->
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+    <hr class="my-5">
+  </section>
+  <!-- Projects section v.3 -->
+  
+  </div>
+  
+  
+<!-- Section: Testimonials v.2 -->
+<section class="text-center col-md-6 mt-2x">
+<% if @reviews.blank? %>
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold my-5">No reviews yet. Be the first to write one!</h2>
+<% else %>
+  <h2 class="h1-responsive font-weight-bold my-5 goldenrod">Reviews</h2>
+ <!-- Carousel Wrapper -->
+  <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <% @reviews.each do |review| %>
+      <!--First slide-->
+      <div class="carousel-item active">
+        <div class="testimonial">
+          <!--Avatar-->
+          <!--<div class="avatar mx-auto mb-4">-->
+          <!--  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid" alt="First sample avatar image">-->
+          <!--</div>-->
+          <!--Content-->
+          <i class=" goldenrod"><%= review.rating %> </i>
+          <p>
+            <i class="fa fa-quote-left"></i> <%= review.comment %>
+          </p>
+          <!--Review-->
+   <hr class="my-5">
         </div>
       </div>
-      <!-- Grid row -->
+      <!--First slide-->
+    <% end %>
     </div>
-    <!-- Grid column -->
+    <!--Slides-->
+ 
   </div>
-  <!-- Grid row -->
-  <hr class="my-5">
+  <!-- Carousel Wrapper -->
+<% end %>
+ 
+
 </section>
-<!-- Projects section v.3 -->
+<!-- Section: Testimonials v.2 -->
+  
+
 </div>
+

@@ -18,6 +18,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @categories = Category.all
+    @reviews = Review.where(book_id: @book.id)
   end
 
   # GET /books/new
