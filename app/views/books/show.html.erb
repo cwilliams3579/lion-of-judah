@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container mt-2x">
   <!-- Projects section v.3 -->
 <section class="my-5">
@@ -34,20 +32,17 @@
           <% if current_user && (current_user.admin?) %>
             <%= link_to '', edit_book_path(@book), class: "fa fa-pencil fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Edit" %> &nbsp;
             <%= link_to '', @book, class: "fa fa-trash text-danger", toggle: "tooltip", placement: "top", title:"Delete", onclick:"loadContent(1)", :method => :delete, :data => {:confirm => "You Sure?"} %> &nbsp;
+          <% else %>
+            <%= link_to '', new_book_review_path(@book), class: "fa fa-pencil fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Write A Review!" %> &nbsp;
           <% end %>
             <%= link_to '', books_path, class: "fas fa-undo-alt goldenrod", toggle: "tooltip", placement: "top", title:"Back" %>
         </div>
       </div>
       <!-- Grid row -->
-
-
-
     </div>
     <!-- Grid column -->
-
   </div>
   <!-- Grid row -->
-
   <hr class="my-5">
 </section>
 <!-- Projects section v.3 -->

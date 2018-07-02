@@ -1,8 +1,8 @@
-<div class="container-small mt-2x">
+<div class="container-small mt-2x mb">
   <div class="card">
     <div class="card-block">
       <div class="form-header title-font" style="background:#000000; font-family: 'UnifrakturCook', cursive !important;">
-        <h3 class="h3-responsive goldenrod"><%= @book.title if @book.present? %></h3>
+        <h3 class="h3-responsive goldenrod"><%= current_user.first_name.capitalize %></h3>
       </div>
       <%= form_for(book) do |f| %>
         <% if book.errors.any? %>
@@ -28,10 +28,10 @@
             <%= image_tag(book.image.url) if book.image? %><br>
           </div>
           
-          <div class="md-form">
-          <%= f.label :category_id %> <br>
-          <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"}, {class: "select_tag btn btn-default"} %>
+          <div class="btn-group">
+          <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"}, {class: "select_tag btn btn-default"} %> <br> &nbsp;
         </div>
+          <%= f.label :category_id, class: "white-text" %> 
 
         <div class="md-form">
           <i class="fa fa-tag prefix fa-fonts"></i>
