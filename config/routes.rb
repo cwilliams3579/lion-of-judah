@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :reviews, except: [:index, :show]
   devise_for :users, :controllers => { registrations: 'registrations'}
   resources :users
   
   resources :categories
+  
   resources :books do
+    resources :reviews, except: [:index, :show]
     resources :comments, only: [:create]
   end
 

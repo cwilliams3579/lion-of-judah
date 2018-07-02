@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :user
   belongs_to :category
+  has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
   mount_uploader :image, ImageUploader
   validates :title, presence: true, length: {minimum: 3, maximum: 50}
