@@ -30,7 +30,7 @@
             <% end -%>
         <% end %>
         <div class="btn-group">
-          <%- if devise_mapping.registerable? %>
+          <%- if devise_mapping.registerable? %><i class="fas fa-user-plus purple-text"></i> &nbsp;
             <%= link_to 'Sign up', new_registration_path(resource_name), class: 'right', style: "color:white;"  %>
           <% end -%> &nbsp; &nbsp; 
           <%- if devise_mapping.recoverable? %>
@@ -44,5 +44,3 @@
 <div class="center">
   <%= link_to "", root_path, class: "fa fa-hand-o-left fa-2x", style: "color:purple;" %>
 </div>
-
-<%= render "devise/shared/links" %>
