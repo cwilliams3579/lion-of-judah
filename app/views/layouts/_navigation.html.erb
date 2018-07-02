@@ -149,9 +149,13 @@
           <i class="fas fa-camera-retro"></i>
           <span class="clearfix d-none d-sm-inline-block">Gallery</span></a>
       </li>
+      <li class="nav-item">
+        <a href="/pages/about" class="nav-link">
+          <i class="fas fa-id-card"></i>
+          <span class="clearfix d-none d-sm-inline-block">About</span></a>
+      </li>
       <% if current_user %>
       <li class="nav-item">
-        <%#= link_to gravatar_for(current_user), edit_user_registration_path, class: "nav-link" %>
         <%#= current_user.first_name %>
         <%= link_to gravatar_for(current_user), edit_user_registration_path, size: 20, :class => 'gravatar nav-link' %>
         <span class="clearfix d-none d-sm-inline-block"></span>

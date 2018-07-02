@@ -13,7 +13,8 @@
       <%= render 'layouts/messages' %>
         <!-- Card image -->
         <div class="view view-cascade overlay">
-          <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(142).jpg" alt="Sample image">
+          <!--<img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(142).jpg" alt="Sample image">-->
+          <%= image_tag(@post.image.url, class: "card-img-top") %>
           <a href="#!">
             <div class="mask rgba-white-slight"></div>
           </a>
@@ -30,28 +31,28 @@
           <div class="social-counters">
             <!-- Facebook -->
             <a class="btn btn-fb">
-              <i class="fa fa-facebook pr-2"></i>
+              <i class="fab fa-facebook pr-2"></i>
               <span class="clearfix d-none d-md-inline-block">Facebook</span>
             </a>
             <span class="counter">46</span>
             <!-- Twitter -->
             <a class="btn btn-tw">
-              <i class="fa fa-twitter pr-2"></i>
+              <i class="fab fa-twitter pr-2"></i>
               <span class="clearfix d-none d-md-inline-block">Twitter</span>
             </a>
             <span class="counter">22</span>
             <!-- Google+ -->
             <a class="btn btn-gplus">
-              <i class="fa fa-google-plus pr-2"></i>
+              <i class="fab fa-google-plus pr-2"></i>
               <span class="clearfix d-none d-md-inline-block">Google+</span>
             </a>
             <span class="counter">31</span>
             <!-- Comments -->
             <a class="btn btn-default">
-              <i class="fa fa-comments-o pr-2"></i>
-              <span class="clearfix d-none d-md-inline-block">Comments</span>
+              <i class="fas fa-comment pr-2"></i>
+              <span class="clearfix d-none d-md-inline-block title-fonts"><%= pluralize(@post.comments.count, 'Comment') %></span>
             </a>
-            <span class="counter">18</span>
+            <span class="counter"><%= @post.comments.count %></span>
           </div>
           <!-- Social shares -->
 
@@ -68,7 +69,6 @@
         </p>
       </div>
  
-      
       <h3 class="h3-responsive goldenrod text-center">Add a comment</h3>
       
       <%= render 'comments/form'  %>

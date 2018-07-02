@@ -77,7 +77,7 @@
       <!-- Excerpt -->
       <p class="dark-grey-text"><%= post.description.truncate(300) %></p>
       <!-- Post data -->
-      <p>by <a class="font-weight-bold"> <%= post.user.full_name.titleize %> </a>, &nbsp;<%= post.created_at.strftime("%m/%d/%Y") %></p>
+      <p>By <a class="font-weight-bold purple-text"> <%= post.user.full_name.titleize %> </a>, &nbsp;<%= post.created_at.strftime("%m/%d/%Y") %></p>
       <!-- Read more button -->
       <%= link_to '', post_path(post), class: "gold-text fa fa-eye fa-2x", toggle: "tooltip", placement: "top", title:"Read More" %>
 

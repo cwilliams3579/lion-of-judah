@@ -17,23 +17,17 @@
           </div>
         <% end %>
         
-         <!--Rating-->
-          <ul class="rating center">
-            <li>
-              <div id="star-rating" data-turbolinks="false" data-score= <%= review.rating %> ></div>
-            </li>
-         
-          </ul>
-        <!--<div class="md-form">-->
-        <!--  <%#= f.label :rating %>-->
-        <!--  <%#= f.number_field :rating, class: "form-control white-text" %>-->
-        <!--</div>-->
-      
+        <!--Rating-->
+        <ul class="rating center">
+          <li>
+            <div id="star-rating" data-turbolinks="false" data-score= <%= review.rating %> ></div>
+          </li>
+        </ul>
+        <!--Rating-->
         <div class="md-form">
           <%= f.label :comment %>
           <%= f.text_area :comment, placeholder: "Enter description", class: "md-textarea white-text" %>
         </div>
-      
         <div class="mx-auto" style="width: 230px;">
           <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>
         </div>
@@ -41,7 +35,6 @@
     </div>
   </div>
 </div>
-
 <script type="text/javascript">
   $('#star-rating').raty({
     path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',

@@ -104,16 +104,21 @@ body,
 
 
 .fa-fonts {
-  color: goldenrod !important;
+  color: purple !important;
 }
 
-.card .card-block .form-header {
+.card .card-block .form-header, .form-header {
   background: transparent;
   border: 2px solid purple;
 }
 
-.container-small .card {
-  border: 4px solid purple;
+
+.purple-border-4x {
+  border: 4px solid purple !important;
+}
+
+.purple-border-2x {
+  border: 4px solid purple !important;
 }
 
 .gal-img {
@@ -209,4 +214,36 @@ select{
   -moz-animation: spin 2s infinite linear;
   -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
+}
+
+
+// Container Sizes
+
+@media (min-width: 768px) {
+    .container-small {
+        width: 300px;
+    }
+    .container-large {
+        width: 970px;
+    } 
+} 
+@media (min-width: 992px) {
+    .container-small {
+        width: 500px;
+    }
+    .container-large {
+        width: 1170px;
+    } 
+} 
+@media (min-width: 1200px) {
+    .container-small {
+        width: 700px;
+    }
+    .container-large {
+        width: 1500px;
+    } 
+}
+
+.container-small, .container-large {
+    max-width: 100%;
 }

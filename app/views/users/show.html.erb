@@ -1,3 +1,45 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+
+<div class="container-small  mt-2x mb-2x">
+  
+  <!-- Card Wider -->
+  <div class="card card-cascade wider">
+  
+    <!-- Card image -->
+    <div class="view view-cascade overlay">
+      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+  
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
+        <small class="text-center grey-text">User</small>
+
+      <!-- Title -->
+      <h4 class="card-title"><strong class="title-font"><%= @user.full_name.titleize if @user.full_name %></strong></h4>
+      <div class="btn-group">
+      <!-- Gravatar -->
+        <%= link_to gravatar_for(current_user), edit_user_registration_path, size: 20, :class => 'gravatar' %> &nbsp;
+      <!-- Gravatar -->
+        <h5 class="blue-text pb-2"> <strong><%= @user.email if @user.email %></strong></h5>
+      </div>
+      
+      <!-- Text -->
+      <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
+  
+      <!-- Linkedin -->
+      <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin"></i></a>
+      <!-- Twitter -->
+      <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
+      <!-- Dribbble -->
+      <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook"></i></a>
+  
+    </div>
+  
+  </div>
+  <!-- Card Wider -->
+  
+</div>
+
+

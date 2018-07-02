@@ -1,19 +1,19 @@
 <% content_for :title do %>Edit Account<% end %>
 <div class="container-small mt-2x white-text">
-  <div class="card">
-    <div class="card-block" style="background: #000000;">
-      <div class="form-header" style="background: #000000; font-family: 'UnifrakturCook', cursive !important;">
-        <h3 class="gold-text">Edit <%= resource_name.to_s.humanize %></h3>
+  <div class="card purple-border-4x">
+    <div class="card-block">
+      <div class="form-header title-fonts">
+        <h3 class="title-fonts">Edit <%= resource_name.to_s.humanize %></h3>
       </div>
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
         <%= devise_error_messages! %>
         
         <div class="md-form">
-          <i class="fa fa-user goldenrod prefix"></i>
+          <i class="fa fa-user fa-fonts prefix"></i>
           <%= f.text_field :first_name, :autofocus => true, class: 'form-control fm-fonts' %>
         </div>
         <div class="md-form">
-          <i class="fas fa-user prefix" style="color:goldenrod;"></i>
+          <i class="fas fa-user fa-fonts prefix"></i>
           <%= f.text_field :last_name, placeholder: "Doe", class: 'form-control fm-fonts' %>
         </div>
         <div class="md-form">

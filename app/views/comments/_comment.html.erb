@@ -2,13 +2,13 @@
   <!--Section: Comments-->
   <section class="my-5">
     <!-- Card header -->
-    <div class="card-header border-0 font-weight-bold black white-text" style="border: 2px solid purple !important;"><%= pluralize(@post.comments.count, 'Comment') %> </div>
+    <!--<div class="card-header border-0 font-weight-bold black white-text"><%= pluralize(@post.comments.count, 'Comment') %> </div>-->
       <div class="media d-block d-md-flex mt-4">
-        <img class="card-img-64 rounded-circle z-depth-1 d-flex mx-auto mb-3" src="https://mdbootstrap.com/img/Photos/Avatars/img (27).jpg" alt="Generic placeholder image">
-        <%#= gravatar_for(comment.user, size: 60) %>
+        <!--<img class="card-img-64 rounded-circle z-depth-1 d-flex mx-auto mb-3" src="https://mdbootstrap.com/img/Photos/Avatars/img (27).jpg" alt="Generic placeholder image">-->
+        <%= link_to gravatar_for(current_user), edit_user_registration_path, size: 64, :class => 'gravatar' %>
         <div class="media-body text-center text-md-left ml-md-3 ml-0">
           <h5 class="font-weight-bold mt-0">
-            <a class="goldenrod" href=""><%#= comment.user.first_name %></a>
+            <a class="purple-text" href=""><%= comment.user.full_name.titleize %></a>
             <a href="" class="pull-right text-default">
               <i class="fa fa-reply"></i>
             </a>
@@ -17,57 +17,7 @@
         </div>
       </div>
   
-    <!--Pagination -->
-    <nav class="d-flex justify-content-center mt-5">
-      <ul class="pagination pagination-circle pg-teal mb-0">
-  
-        <!--First-->
-        <li class="page-item disabled">
-          <a class="page-link">First</a>
-        </li>
-  
-        <!--Arrow left-->
-        <li class="page-item disabled">
-          <a class="page-link" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-  
-        <!--Numbers-->
-        <li class="page-item active">
-          <a class="page-link">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link">4</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link">5</a>
-        </li>
-  
-        <!--Arrow right-->
-        <li class="page-item">
-          <a class="page-link" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-  
-        <!--Last-->
-        <li class="page-item">
-          <a class="page-link">Last</a>
-        </li>
-  
-      </ul>
-    </nav>
-    <!--Pagination -->
-  
   </section>
   <!--Section: Comments-->
 </div>
+<hr class="my-5">
