@@ -46,7 +46,7 @@
 <section class="my-5">
 
   <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold text-center my-5 title-font">Recent posts</h2>
+  <h2 class="h1-responsive font-weight-bold text-center my-5 indie-font goldenrod">Recent Posts</h2>
   <!-- Section description -->
   <p class="text-center grey-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
@@ -73,13 +73,13 @@
     <div class="col-lg-7 col-xl-8">
 
       <!-- Post title -->
-      <h3 class="font-weight-bold mb-3"><strong><%= link_to post.title, post_path(post), class: "title-font" %> </strong></h3>
+      <h3 class="font-weight-bold mb-3"><strong><%= link_to post.title, post_path(post), class: "indie-font goldenrod" %> </strong></h3>
       <!-- Excerpt -->
       <p class="dark-grey-text"><%= post.description.truncate(300) %></p>
       <!-- Post data -->
-      <p>By <a class="font-weight-bold purple-text"> <%= post.user.full_name.titleize %> </a>, &nbsp;<%= post.created_at.strftime("%m/%d/%Y") %></p>
+      <p class="grey-text">By <a class="font-weight-bold purple-text indie-font"> <%= post.user.full_name.titleize %> </a>, &nbsp;<%= post.created_at.strftime("%m/%d/%Y") %></p>
       <!-- Read more button -->
-      <%= link_to '', post_path(post), class: "gold-text fa fa-eye fa-2x", toggle: "tooltip", placement: "top", title:"Read More" %>
+      <%= link_to '', post_path(post), class: "gold-text fa fa-eye fa-lg", toggle: "tooltip", placement: "top", title:"Read More" %>
 
     </div>
     <!-- Grid column -->

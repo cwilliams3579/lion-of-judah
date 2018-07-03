@@ -2,7 +2,7 @@
   <div class="card purple-border-4x">
     <div class="card-block">
       <div class="form-header">
-        <h3 class="h3-responsive title-fonts"><%= current_user.full_name if current_user.present? %></h3>
+        <h4 class="h4-responsive indie-font goldenrod"><%= current_user.full_name if current_user.present? %></h4>
       </div>
       <%= form_for(post) do |f| %>
         <% if post.errors.any? %>

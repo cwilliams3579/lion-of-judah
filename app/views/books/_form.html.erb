@@ -1,8 +1,8 @@
 <div class="container-small mt-2x mb">
-  <div class="card">
+  <div class="card purple-border-4x">
     <div class="card-block">
-      <div class="form-header title-font" style="background:#000000; font-family: 'UnifrakturCook', cursive !important;">
-        <h3 class="h3-responsive goldenrod"><%= current_user.first_name.capitalize %></h3>
+      <div class="form-header indie-font goldenrod">
+        <h3 class="h3-responsive indie-font goldenrod"><%= current_user.first_name.capitalize %></h3>
       </div>
       <%= form_for(book) do |f| %>
         <% if book.errors.any? %>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="md-form">
-          <i class="fa fa-pencil prefix fa-fonts"></i>
+          <i class="fas fa-pencil-alt prefix fa-fonts"></i>
           <%= f.text_area :description, placeholder: "Enter description", class: 'md-textarea white-text' %>
         </div>
 

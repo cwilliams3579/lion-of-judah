@@ -14,6 +14,7 @@
 //= require popper
 //= require rails-ujs
 //= require alertify
+//= require alertify/confirm-modal
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .

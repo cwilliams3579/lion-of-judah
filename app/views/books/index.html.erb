@@ -3,7 +3,7 @@
   <section class="text-center my-5">
   
     <!-- Section heading -->
-    <h2 class="h2-responsive font-weight-bold text-center title-font my-5">Our bestsellers</h2>
+    <h2 class="h2-responsive font-weight-bold text-center indie-font goldenrod my-5">Our bestsellers</h2>
     <!-- Section description -->
 
     <!-- Grid row -->
@@ -27,11 +27,11 @@
              
               <h6 class="h6-responsive"><%= link_to Category.find(book.category_id).name, category_path(book.category_id), class: "purple-text" %></h6>
         
-            <h4 class="card-title gold-text">
-              <strong class="title-font">
-                <%= link_to book.title, book_path(book), class: "title-font" %>
+            <h6 class="card-title goldenrod">
+              <strong class="indie-font goldenrod">
+                <%= link_to book.title, book_path(book), class: "indie-font goldenrod" %>
               </strong>
-            </h4>
+            </h6>
             <!--Rating-->
             <ul class="rating">
               <li>
@@ -83,9 +83,11 @@
   <!-- Section: Products v.1 -->
   <br>
 
-  <div class="center">
-    <%= link_to '', new_book_path, class: "fas fa-book fa-2x goldenrod" %>
-  </div>
+  <% if user_signed_in? && current_user.admin? %>
+    <div class="center">
+      <%= link_to '', new_book_path, class: "fas fa-book fa-2x goldenrod" %>
+    </div>
+  <% end %>
 </div>
 
 

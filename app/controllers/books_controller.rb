@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-
+  before_action :check_user, except: [:index, :show]
+  
   # GET /books
   # GET /books.json
   def index
@@ -88,6 +89,12 @@ class BooksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.find(params[:id])
+    end
+    
+    def check_user
+      unless current_user.admin?
+        redirect_to root_url, alert: "Sorry, only an administrator can perform that action!"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

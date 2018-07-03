@@ -5,7 +5,7 @@
   <section class="my-5">
   
     <!-- Section heading -->
-    <h2 class="h1-responsive font-weight-bold text-center my-5 title-font"><%= @book.title %></h2>
+    <h2 class="h1-responsive font-weight-bold text-center my-5 indie-font goldenrod"><%= @book.title %></h2>
     <!-- Section description -->
   
     <!-- Grid row -->
@@ -29,7 +29,7 @@
             <i class="fa fa-book fa-2x goldenrod"></i>
           </div>
           <div class="col-md-11 col-10">
-            <h5 class="font-weight-bold mb-3"> <%= link_to Category.find(@book.category_id).name, category_path(@book.category_id), class: "purple-text" %> </h5>
+            <h5 class="font-weight-bold mb-3"> <%= link_to Category.find(@book.category_id).name, category_path(@book.category_id), class: "purple-text indie-font" %> </h5>
             <small class="font-weight-bold mb-3">Written by <%= @book.user.full_name.titleize  %></small>
             <p class="grey-text"><%= @book.description %></p>
             <% if current_user && (current_user.admin?) %>
@@ -55,10 +55,10 @@
 <section class="text-center col-md-6 mt-2x">
 <% if @reviews.blank? %>
   <!-- Section heading -->
-  <h3 class="h3-responsive font-weight-bold my-5 grey-text">No reviews yet. Be the first to write one!</h3>
+  <h4 class="h4-responsive font-weight-bold my-5 grey-text">No reviews yet. Be the first to write one!</h4>
   <%= link_to '', new_book_review_path(@book), class: "fas fa-pencil-alt fa-lg goldenrod" %>
 <% else %>
-  <h2 class="h1-responsive font-weight-bold my-5 title-font">Reviews</h2>
+  <h4 class="h4-responsive font-weight-bold my-5 indie-font goldenrod">Reviews</h4>
  <!-- Carousel Wrapper -->
   <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel" data-interval="false">
     <!--Slides-->
@@ -76,6 +76,12 @@
           <p class="grey-text">
             <i class="fa fa-quote-left"></i> <%= h(review.comment).gsub(/\n/, '<br/>').html_safe %> <i class="fa fa-quote-right"></i>
           </p>
+          <% if user_signed_in? %>
+            <% if (review.user == current_user) || (current_user.admin?) %>
+              <%= link_to "", edit_book_review_path(@book, review), class: "fas fa-edit goldenrod" %> &nbsp;
+              <%= link_to " ", book_review_path(@book, review), toggle: "tooltip", placement: "top", title:"Delete", onclick:"loadContent(1)", :method => :delete, :data => {:confirm => "You Sure?"}, class: "fas fa-trash text-danger" %>
+            <% end %>
+          <% end %>
           <!--Review-->
          <hr class="my-5">
         </div>
