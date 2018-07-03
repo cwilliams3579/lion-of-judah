@@ -5,7 +5,7 @@
   <section class="my-5">
   
     <!-- Section heading -->
-    <h2 class="h1-responsive font-weight-bold text-center my-5 goldenrod"><%= @book.title %></h2>
+    <h2 class="h1-responsive font-weight-bold text-center my-5 title-font"><%= @book.title %></h2>
     <!-- Section description -->
   
     <!-- Grid row -->
@@ -30,7 +30,7 @@
           </div>
           <div class="col-md-11 col-10">
             <h5 class="font-weight-bold mb-3"> <%= link_to Category.find(@book.category_id).name, category_path(@book.category_id), class: "purple-text" %> </h5>
-            <small class="font-weight-bold mb-3">Written by <%= @book.user.full_name  %></small>
+            <small class="font-weight-bold mb-3">Written by <%= @book.user.full_name.titleize  %></small>
             <p class="grey-text"><%= @book.description %></p>
             <% if current_user && (current_user.admin?) %>
               <%= link_to '', edit_book_path(@book), class: "fas fa-pencil-alt fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Edit" %> &nbsp;
@@ -58,7 +58,7 @@
   <h3 class="h3-responsive font-weight-bold my-5 grey-text">No reviews yet. Be the first to write one!</h3>
   <%= link_to '', new_book_review_path(@book), class: "fas fa-pencil-alt fa-lg goldenrod" %>
 <% else %>
-  <h2 class="h1-responsive font-weight-bold my-5 goldenrod">Reviews</h2>
+  <h2 class="h1-responsive font-weight-bold my-5 title-font">Reviews</h2>
  <!-- Carousel Wrapper -->
   <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel" data-interval="false">
     <!--Slides-->
@@ -69,11 +69,15 @@
         <div class="testimonial">
           <!--Content-->
           <div class="star-rating" data-turbolinks="false" data-score= <%= review.rating %> ></div>
+          <p class="purple-text">
+            <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
+            <%= review.created_at.strftime("%-m/%-d/%Y") %>
+          </p>
           <p class="grey-text">
             <i class="fa fa-quote-left"></i> <%= h(review.comment).gsub(/\n/, '<br/>').html_safe %> <i class="fa fa-quote-right"></i>
           </p>
           <!--Review-->
-   <hr class="my-5">
+         <hr class="my-5">
         </div>
       </div>
       <!--First slide-->

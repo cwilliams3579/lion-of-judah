@@ -1,5 +1,5 @@
-<div class="container-small mt-2x">
-  <div class="card">
+<div class="container-small mt-2x mb">
+  <div class="card purple-border-4x">
     <div class="card-block">
       <div class="form-header title-font" style="background:#000000; font-family: 'UnifrakturCook', cursive !important;">
         <h3 class="h3-responsive goldenrod">Review</h3>
@@ -25,8 +25,7 @@
         </ul>
         <!--Rating-->
         <div class="md-form">
-          <%= f.label :comment %>
-          <%= f.text_area :comment, placeholder: "Enter description", class: "md-textarea white-text" %>
+          <%= f.text_area :comment, placeholder: "Enter review", class: "form-control md-textarea white-text" %>
         </div>
         <div class="mx-auto" style="width: 230px;">
           <%= image_submit_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true", class: "waves-effect waves-light btn-img") %>

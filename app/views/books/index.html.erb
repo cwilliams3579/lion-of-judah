@@ -3,7 +3,7 @@
   <section class="text-center my-5">
   
     <!-- Section heading -->
-    <h2 class="h1-responsive font-weight-bold text-center title-font my-5">Our bestsellers</h2>
+    <h2 class="h2-responsive font-weight-bold text-center title-font my-5">Our bestsellers</h2>
     <!-- Section description -->
 
     <!-- Grid row -->
@@ -25,7 +25,7 @@
           <div class="card-body card-body-cascade text-center">
             <!-- Category & Title -->
              
-              <h5 class="h5-responsive"><%= link_to Category.find(book.category_id).name, category_path(book.category_id), class: "purple-text" %></h5>
+              <h6 class="h6-responsive"><%= link_to Category.find(book.category_id).name, category_path(book.category_id), class: "purple-text" %></h6>
         
             <h4 class="card-title gold-text">
               <strong class="title-font">
