@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations'}
   resources :users
   
-  resources :categories
+  resources :categories do
+    collection do
+      get 'search'
+    end
+  end
   
   resources :books do
     collection do

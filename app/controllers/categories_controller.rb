@@ -1,5 +1,15 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :search, :show]
+  before_action :check_user, except: [:index, :show]
+
+  def search
+    if params[:search].present?
+      @categories = Category.search(params[:search])
+    else
+      @categories = Category.all
+    end
+  end
 
   # GET /categories
   # GET /categories.json
@@ -65,6 +75,12 @@ class CategoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])
+    end
+
+    def check_user
+      unless current_user.admin?
+        redirect_to root_url, alert: "Sorry, only an administrator can perform that action!"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
