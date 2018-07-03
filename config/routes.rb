@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :categories
   
   resources :books do
+    collection do
+      get 'search'
+    end
     resources :reviews, except: [:index, :show]
     resources :comments, only: [:create]
   end

@@ -36,6 +36,7 @@ gem 'alertifyjs-rails'
 gem 'pundit'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'searchkick', '~> 3.1'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
