@@ -28,15 +28,17 @@
               <h5 class="h5-responsive"><%= link_to Category.find(book.category_id).name, category_path(book.category_id), class: "purple-text" %></h5>
         
             <h4 class="card-title gold-text">
-              <strong>
-                <%= link_to book.title, book_path(book), style:"font-family: 'UnifrakturCook', cursive !important; color:goldenrod;" %>
+              <strong class="title-font">
+                <%= link_to book.title, book_path(book), class: "title-font" %>
               </strong>
             </h4>
             <!--Rating-->
             <ul class="rating">
               <li>
                 
-                <div id="star-rating" data-turbolinks="false" data-score= <%= @avg_rating %> ></div>
+                <%= link_to new_book_review_path(book) do %>
+                  <div id="star-rating" data-turbolinks="false" data-score= <%= @avg_rating %> ></div>
+                <% end %>
               </li>
             </ul>
             <!-- Description -->
@@ -47,9 +49,8 @@
             <div class="card-footer px-1">
               
               <span class="center">
-                <a data-toggle="tooltip" data-placement="top" title="See More">
-                  <i class="fas fa-eye grey-text ml-3"></i>
-                </a>
+               
+                <%= link_to '', book_path(book), toggle: "tooltip", placement: "top", title: "See More", class: "fas fa-eye grey-text ml-3" %>
                 <a data-toggle="tooltip" data-placement="top" title="Like">
                   <i class="fas fa-thumbs-up grey-text ml-3"></i>
                 </a>
