@@ -134,6 +134,22 @@
     <div class="breadcrumb-dn mr-auto">
       <a href="/" class="navbar-brand text-center white-text" style="font-family: 'UnifrakturCook', cursive !important; font-size:2em !important; color: #DAA520 !important;">Lion Of Judah</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <%= form_tag search_books_path, method: :get, class: "search-form center" do %>
+          <div class="form-group md-form mt-0 pt-1 waves-light">
+            <div class="btn-group">
+              <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
+              <%#= submit_tag " ", name: nil do %>
+              <%#= image_tag("http://files.softicons.com/download/system-icons/purplesilver-icons-by-kidaubis/png/256/Search.png") %>
+              <img src="http://files.softicons.com/download/system-icons/purplesilver-icons-by-kidaubis/png/256/Search.png" style="width:35px; height:35px;">
+
+                <%# end %>
+            </div>
+          </div>
+        <% end %>
+      </li>
+    </ul>
     <ul class="nav navbar-nav nav-flex-icons ml-auto">
       <li class="nav-item">
         <a href="/books" class="nav-link">
