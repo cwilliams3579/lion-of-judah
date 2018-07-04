@@ -1,7 +1,7 @@
-<div class="container-small mt-2x">
-  <div class="card">
+<div class="container-small mt-2x mb">
+  <div class="card purple-border-4x">
     <div class="card-block">
-      <div class="form-header title-font" style="background:#000000; font-family: 'UnifrakturCook', cursive !important;">
+      <div class="form-header indie-font goldenrod">
         <h3 class="h3-responsive goldenrod"><%= Category.name if @category.present? %></h3>
       </div>
       <%= form_with(model: category, local: true) do |f| %>

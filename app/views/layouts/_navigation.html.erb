@@ -1,11 +1,11 @@
 <!--Double navigation-->
 <header>
   <!-- Sidebar navigation -->
-  <div id="slide-out" class="side-nav sn-bg-1 custom-scrollbar">
+  <div id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
     <ul class="custom-scrollbar">
       <!-- Logo -->
       <li>
-        <div class="logo-wrapper waves-light" style="height:300px !important;">
+        <div class="logo-wrapper waves-light" style="height:170px !important;">
           <%= link_to (image_tag("https://github.com/cwilliams3579/Choosen-uploads/blob/master/lion-btn.png?raw=true")), root_path, class: "img-fluid flex-center", id:"lion-logo", rel: "gallery", onclick:"loadContent(1)" %>
         </div>
       </li>
@@ -61,6 +61,11 @@
                         <%= link_to category.name, books_path(category: category.name), class: "dropdown-item" %>
                       <% end %>
                     </li>
+                    <% if current_user && current_user.admin? %>
+                      <li>
+                        <%= link_to 'New Category', new_category_path %>
+                      </li>
+                    <% end %>
                 </ul>
               </div>
             </li>
@@ -85,27 +90,9 @@
               </div>
             </li>
             <li>
-              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fa fa-envelope-o"></i> Contact me<i class="fa fa-angle-down rotate-icon"></i></a>
+              <a class="collapsible-header waves-effect arrow-r indie-font"><i class="fa fa-envelope"></i> Contact me<i class="fa fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul class="list-unstyled">
-                  <li>
-                    <a href="#" class="waves-effect">FAQ</a>
-                  </li>
-                  <li>
-                    <a href="#" class="waves-effect">Write a message</a>
-                  </li>
-                  <li>
-                    <a href="#" class="waves-effect">FAQ</a>
-                  </li>
-                  <li>
-                    <a href="#" class="waves-effect">Write a message</a>
-                  </li>
-                  <li>
-                    <a href="#" class="waves-effect">FAQ</a>
-                  </li>
-                  <li>
-                    <a href="#" class="waves-effect">Write a message</a>
-                  </li>
                   <li>
                     <a href="#" class="waves-effect">FAQ</a>
                   </li>
@@ -132,7 +119,7 @@
     </div>
     <!-- Breadcrumb-->
     <div class="breadcrumb-dn mr-auto">
-      <a href="/" class="navbar-brand text-center white-text" style="font-family: 'UnifrakturCook', cursive !important; font-size:2em !important; color: #DAA520 !important;">Lion Of Judah</a>
+      <a href="/" class="navbar-brand text-center white-text" style="font-family: 'UnifrakturCook', cursive !important; font-size:2em !important; color: #DAA520 !important;">Arch Angel</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="nav-item">

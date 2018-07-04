@@ -183,7 +183,7 @@ select{
 }
 
 .select_tag {
-    font-family: 'Indie Flower',cursive !important;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     display: block !important;
 }
 
@@ -194,7 +194,7 @@ select{
 .black-skin .card-header, .black-skin .form-header {
     background-color: #000000 !important;
     border: 2px solid goldenrod;
-    font-family: 'Indie Flower', cursive !important;
+    font-family: 'UnifrakturCook', cursive !important;
     font-size: 2em !important;
     color: #DAA520 !important;
 }
@@ -250,4 +250,8 @@ select{
 
 .container-small, .container-large {
     max-width: 100%;
+}
+
+a.waves-effect, a.waves-light {
+    display: inherit !important;
 }

@@ -22,12 +22,12 @@
     </script>
   <%= alertify_flash %>
   </head>
-  <body class="hidden-sn black-skin">
+  <body class="fixed-sn black-skin">
        <%= render 'layouts/navigation' %>
-    <div class="container-fluid">
+    <main role="main">
        <%#= render 'layouts/messages' %>
        <%= yield %>
-    </div>
+    </main>
      
     <%= render 'layouts/footer' %>
     <%= render 'layouts/scripts' %>
