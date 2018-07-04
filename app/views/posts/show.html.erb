@@ -24,9 +24,9 @@
         <div class="card-body card-body-cascade text-center">
 
           <!-- Title -->
-          <h2 class="font-weight-bold title-font"> <%= @post.title.titleize %> </h2>
+          <h2 class="font-weight-bold indie-font goldenrod"> <%= @post.title.titleize %> </h2>
           <!-- Data -->
-          <p>Written by <a><strong><%= @post.user.full_name.titleize %></strong></a>, <%= @post.created_at.strftime("%m/%d/%Y") %></p>
+          <p class="grey-text">Written by <a><strong class="purple-text"><%= @post.user.full_name.titleize %></strong></a>, <%= @post.created_at.strftime("%m/%d/%Y") %></p>
           <!-- Social shares -->
           <div class="social-counters">
             <!-- Facebook -->
@@ -69,7 +69,7 @@
         </p>
       </div>
  
-      <h3 class="h3-responsive goldenrod text-center">Add a comment</h3>
+      <h3 class="h3-responsive indie-font goldenrod text-center">Add a comment</h3>
       
       <%= render 'comments/form'  %>
       
