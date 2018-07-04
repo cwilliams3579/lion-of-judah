@@ -255,3 +255,7 @@ select{
 a.waves-effect, a.waves-light {
     display: inherit !important;
 }
+
+.black-skin .side-nav .collapsible li .collapsible-header.active {
+    background-color: purple;
+}
