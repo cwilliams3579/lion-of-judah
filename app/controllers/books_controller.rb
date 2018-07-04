@@ -33,6 +33,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @categories = Category.all
+    @book = Book.friendly.find(params[:id])
     
     @reviews = Review.where(book_id: @book.id).order("created_at DESC")
     if @reviews.blank?
@@ -97,6 +98,9 @@ class BooksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "Oops something went wrong!"
+      redirect_to root_path
     end
     
     def check_user

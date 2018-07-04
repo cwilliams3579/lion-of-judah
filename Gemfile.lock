@@ -310,6 +310,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  elasticsearch (~> 6.1)
   friendly_id (~> 5.1.0)
   high_voltage
   hirb

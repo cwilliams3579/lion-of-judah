@@ -1,4 +1,8 @@
 class Post < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: [:finders, :slugged]
+  alias_attribute :slug, :title
+  
   belongs_to :user
   has_many :comments, dependent: :destroy
   

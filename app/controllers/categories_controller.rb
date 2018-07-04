@@ -20,6 +20,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @category = Category.friendly.find(params[:id])
   end
 
   # GET /categories/new
@@ -75,6 +76,9 @@ class CategoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "Oops something went wrong!"
+      redirect_to root_path
     end
 
     def check_user
