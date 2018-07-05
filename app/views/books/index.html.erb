@@ -52,11 +52,14 @@
                
                 <%= link_to '', book_path(book), toggle: "tooltip", placement: "top", title: "See More", class: "fas fa-eye grey-text ml-3" %>
                 
+                <a data-toggle="tooltip" data-placement="top" title="Likes">
+                  <i class="fa fa-heart grey-text ml-3"><span class="badge purple darken-2"><%= book.likes.count %></span></i>
+                </a>
                 <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
                   <i class="fa fa-shopping-cart grey-text ml-3"></i>
                 </a>
                 
-                <span class="badge-purple"></span>
+                
                 <% if current_user && (current_user.admin?) %>
                    &nbsp;
                   <%= link_to '', edit_book_path(book), class: "fas fa-pencil-alt gold-text", toggle: "tooltip", placement: "top", title:"Edit" %>

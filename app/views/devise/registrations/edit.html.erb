@@ -2,8 +2,8 @@
 <div class="container-small mt-2x white-text">
   <div class="card purple-border-4x">
     <div class="card-block">
-      <div class="form-header title-fonts">
-        <h3 class="title-fonts">Edit <%= resource_name.to_s.humanize %></h3>
+      <div class="form-header indie-font">
+        <h3 class="indie-font">Edit <%= resource_name.to_s.humanize %></h3>
       </div>
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
         <%= devise_error_messages! %>

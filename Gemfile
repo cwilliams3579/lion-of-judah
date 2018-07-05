@@ -41,6 +41,7 @@ gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.
 gem 'elasticsearch', '~> 6.1'
 group :development do
   gem 'better_errors'
+  gem 'awesome_print', '~> 1.8'
   gem 'binding_of_caller'
   gem 'hirb'
   gem 'hub', :require=>nil
