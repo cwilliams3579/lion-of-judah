@@ -18,13 +18,13 @@
         <div class="star-rating" data-turbolinks="false" data-score= <%= @avg_rating %> ></div> <br>
         <p><%= "#{@reviews.length} reviews" %></p>
         <div class="btn-group">
-          <%= link_to  book_likes_path(@book, like: "like"), method: :post do %>
-            <span id="like"><i class="fa fa-thumbs-up fa-lg goldenrod ml-3"></i></span>
-          <% end %> &nbsp;<span class="badge purple darken-2"><%= @book.likes_total %></span></i>
+          <%#= link_to  book_likes_path(@book, like: "like"), method: :post do %>
+            <span id='<%= @book.id %>'><i class="like fa fa-thumbs-up fa-lg goldenrod ml-3"></i></span>
+          <%# end %> &nbsp;<span class="badge purple darken-2"><%= @book.likes_total %></span></i>
                 
-          <%= link_to book_likes_path(@book, like: "dislike"), method: :post do %>
-            <span id="dislike"><i class="fa fa-thumbs-down fa-lg goldenrod ml-3"></i></span>
-          <% end %> &nbsp;<span class="badge purple darken-2"><%= @book.dislikes_total %></span></i>
+          <%#= link_to book_likes_path(@book, like: "dislike"), method: :post do %>
+            <span id='<%= @book.id %>'><i class="dislike fa fa-thumbs-down fa-lg goldenrod ml-3"></i></span>
+          <%# end %> &nbsp;<span class="badge purple darken-2"><%= @book.dislikes_total %></span></i>
         </div>
       </div>
       <!-- Grid column -->
