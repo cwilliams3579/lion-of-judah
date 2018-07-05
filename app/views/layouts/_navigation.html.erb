@@ -28,7 +28,7 @@
       <li>
         <%= form_tag search_books_path, method: :get, class: "search-form" do %>
           <div class="form-group md-form mt-0 pt-1 waves-light">
-            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
+            <%= text_field_tag :search, params[:search], class: "form-control white-text", placeholder: "Search" %>
             <%#= submit_tag "Seach", name: nil, class: "btn btn-outline-gold" %>
           </div>
         <% end %>
@@ -125,7 +125,7 @@
         <%= form_tag search_books_path, method: :get, class: "search-form center" do %>
           <div class="form-group md-form mt-0 pt-1 waves-light">
             <div class="btn-group">
-              <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
+              <%= text_field_tag :search, params[:search], class: "form-control white-text indie-font", placeholder: "Search" %>
               <%#= submit_tag " ", name: nil do %>
               <%#= image_tag("http://files.softicons.com/download/system-icons/purplesilver-icons-by-kidaubis/png/256/Search.png") %>
               <img src="http://files.softicons.com/download/system-icons/purplesilver-icons-by-kidaubis/png/256/Search.png" style="width:35px; height:35px;">
