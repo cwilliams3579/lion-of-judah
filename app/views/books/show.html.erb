@@ -17,6 +17,15 @@
         <%= image_tag(@book.image.url, class: "img-fluid rounded z-depth-1", alt: "Sample project image") %> 
         <div class="star-rating" data-turbolinks="false" data-score= <%= @avg_rating %> ></div> <br>
         <p><%= "#{@reviews.length} reviews" %></p>
+        <div class="btn-group">
+          <%= link_to  book_likes_path(@book, like: "like", method: :post) do %>
+            <span id="dislike"><i class="fa fa-thumbs-up goldenrod ml-3"></i></span>
+          <% end %> &nbsp;
+                
+          <%= link_to book_likes_path(@book, like: "dislike", method: :post) do %>
+            <span id="dislike"><i class="fa fa-thumbs-down goldenrod ml-3"></i></span>
+          <% end %>
+        </div>
       </div>
       <!-- Grid column -->
   
@@ -32,6 +41,7 @@
             <h5 class="font-weight-bold mb-3"> <%= link_to Category.find(@book.category_id).name, category_path(@book.category_id), class: "purple-text indie-font" %> </h5>
             <small class="font-weight-bold mb-3">Written by <%= @book.user.full_name.titleize  %></small>
             <p class="grey-text"><%= @book.description %></p>
+            
             <% if current_user && (current_user.admin?) %>
               <%= link_to '', edit_book_path(@book), class: "fas fa-pencil-alt fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Edit" %> &nbsp;
               <%= link_to '', @book, class: "fa fa-trash text-danger", toggle: "tooltip", placement: "top", title:"Delete", onclick:"loadContent(1)", :method => :delete, :data => {:confirm => "You Sure?"} %> &nbsp;

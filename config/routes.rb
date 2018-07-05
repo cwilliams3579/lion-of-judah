@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   end
   
   resources :books do
+    resources :reviews, except: [:index, :show]
+    resources :comments, :likes, only: [:create]
+    # resources :likes, only: [:create]
     collection do
       get 'search'
     end
-    resources :reviews, except: [:index, :show]
-    resources :comments, only: [:create]
   end
 
   resources :posts do
@@ -27,5 +28,5 @@ Rails.application.routes.draw do
   
     root to: 'visitors#index'
     
-    mount ActionCable.server => '/cable'
+    # mount ActionCable.server => '/cable'
 end
