@@ -29,7 +29,7 @@
           <div class="social-counters">
             <!-- Comments -->
             <a >
-              <i class="fas fa-comment pr-2"></i>
+              <i class="fas fa-comment pr-2 goldenrod"></i>
               <span class="clearfix d-none d-md-inline-block indie-font"><%= pluralize(@post.comments.count, 'Comment') %></span>
             </a>
             <!-- Comments -->
@@ -59,6 +59,10 @@
         <% else %>
           <h3 class="h3-responsive goldenrod text-center">No Comments Yet! </h3>
         <% end %>
+        
+        <div class="center">
+          <%= will_paginate(@comments, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'justify-content-center') %>
+        </div>
       </div>
       
     </div>

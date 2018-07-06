@@ -1,6 +1,6 @@
 <div class="row">
   
-  <div class="col-md-6 mt-2x">
+  <div class="col-md-6 mt mb">
     <!-- Projects section v.3 -->
   <section class="my-5">
   
@@ -16,8 +16,8 @@
       <div class="col-lg-5 mb-lg-0 mb-5">
         <!--Image-->
         <%= image_tag(@book.image.url, class: "img-fluid rounded z-depth-1", alt: "Sample project image") %> 
-        <div class="star-rating" data-turbolinks="false" data-score= <%= @avg_rating %> ></div> <br>
-        <p><%= "#{@reviews.length} reviews" %></p>
+        <div class="star-rating mx-auto" data-turbolinks="false" data-score= <%= @avg_rating %> ></div> <br>
+        <p class="text-center"><%= "#{@reviews.length} reviews" %></p>
         <div class="btn-group">
           <%= link_to  book_likes_path(@book, like: "like"), remote: true, method: :post do %>
             <span id='like'><i class="like fa fa-thumbs-up fa-lg goldenrod ml-3"></i></span>
@@ -43,13 +43,12 @@
             <small class="font-weight-bold mb-3">Written by <%= @book.user.full_name.titleize  %></small>
             <p class="grey-text"><%= @book.description %></p>
             
-            <% if current_user && (current_user.admin?) %>
-              <%= link_to '', edit_book_path(@book), class: "fas fa-pencil-alt fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Edit" %> &nbsp;
+            <% if can? :edit, :destroy, @book %>
+              <%= link_to '', edit_book_path(@book), class: "fas fa-edit fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Edit" %> &nbsp;
               <%= link_to '', @book, class: "fa fa-trash text-danger", toggle: "tooltip", placement: "top", title:"Delete", onclick:"loadContent(1)", :method => :delete, :data => {:confirm => "You Sure?"} %> &nbsp;
             <% else %>
               <%= link_to '', new_book_review_path(@book), class: "fas fa-pencil-alt fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Write A Review!" %> &nbsp;
             <% end %>
-              <%= link_to '', books_path, class: "fas fa-undo-alt goldenrod", toggle: "tooltip", placement: "top", title:"Back" %>
           </div>
         </div>
         <!-- Grid row -->
@@ -105,12 +104,11 @@
   </div>
   <!-- Carousel Wrapper -->
 <% end %>
- 
-
 </section>
 <!-- Section: Testimonials v.2 -->
-  
 </div>
+
+<%= link_to '', books_path, class: "fas fa-hand-o-left fa-2x goldenrod", toggle: "tooltip", placement: "top", title:"Back" %>
 
 <script type="text/javascript">
   $('.star-rating').raty({

@@ -44,7 +44,7 @@
                 <ul class="list-unstyled">
                     <li><a href="/books" class="waves-effect">Books</a>
                     </li>
-                    <% if current_user && (current_user.admin?) %>
+                    <% if can? :create, @book %>
                       <li>
                         <a href="/books/new" class="waves-effect">New Book</a>
                       </li>
@@ -61,7 +61,7 @@
                         <%= link_to category.name, books_path(category: category.name), class: "dropdown-item" %>
                       <% end %>
                     </li>
-                    <% if current_user && current_user.admin? %>
+                    <% if can? :create, @category %>
                       <li>
                         <%= link_to 'New Category', new_category_path %>
                       </li>

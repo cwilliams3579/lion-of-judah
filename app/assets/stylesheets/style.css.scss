@@ -76,7 +76,7 @@ body,
 .mx-auto {
   text-align: center !important;
   margin: 0 auto !important;
-  width: 50px;
+  max-width: 100%;
 }
 
 .sn-bg-1 {
@@ -262,4 +262,9 @@ a.waves-effect, a.waves-light {
 
 .black-skin .side-nav .collapsible li .collapsible-body a:hover {
     color: goldenrod;
+}
+
+.card-img-top {
+  max-width: 100% !important; 
+  height: 297px !important;
 }

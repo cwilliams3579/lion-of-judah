@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @comment = Comment.new
-    @comments = @post.comments
+    @comments = @post.comments.paginate(page: params[:page], per_page: 3).order("created_at DESC")
     @post = Post.friendly.find(params[:id])
   end
 
