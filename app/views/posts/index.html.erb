@@ -79,8 +79,11 @@
       <!-- Post data -->
       <p class="grey-text">By <a class="font-weight-bold purple-text indie-font"> <%= post.user.full_name.titleize %> </a>, &nbsp;<%= post.created_at.strftime("%m/%d/%Y") %></p>
       <!-- Read more button -->
-      <%= link_to '', post_path(post), class: "gold-text fa fa-eye fa-lg", toggle: "tooltip", placement: "top", title:"Read More" %>
-
+      <%= link_to '', post_path(post), class: "fas fa-eye fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Read More" %>  &nbsp;
+      <% if can? :update, post %>
+        <%= link_to '', edit_post_path(post), class: "fas fa-edit fa-lg goldenrod", toggle: "tooltip", placement: "top", title:"Edit" %> &nbsp;
+        <%= link_to '', post, :method => :delete, :data => {:confirm => "You Sure?"} ,class: "fas fa-trash fa-lg text-danger", toggle: "tooltip", placement: "top", title:"Delete" %>
+      <% end %>
     </div>
     <!-- Grid column -->
 

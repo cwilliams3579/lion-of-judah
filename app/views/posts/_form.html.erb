@@ -1,4 +1,4 @@
-<div class="container-small mt-2x mb">
+<div class="container-small mt mb">
   <div class="card purple-border-4x">
     <div class="card-block">
       <div class="form-header">
@@ -19,9 +19,11 @@
 
         <div class="btn-group">
           <i class="fa fa-camera-retro fa-2x prefix fa-fonts"></i> &nbsp;
+          <div class="col-">
           <%= image_tag(post.image.url) if post.image? %><br>
           <%= f.file_field :image, class:"white-text" %>
-          <%= f.hidden_field :image_cache %>
+            <%= f.hidden_field :image_cache %>
+          </div>
         </div>
 
         <div class="md-form">
