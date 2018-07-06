@@ -21,14 +21,12 @@
 
 $(document).ready(function(){
   $('.like, .dislike').on('click', function(){
-    if(confirm("Are you sure?")){
-      $.ajax({
-        url: '/books/' + this.parentElement.id + '/likes/',
-        type: 'POST',
-        success: function(r){
-          
-        }
-      });
-    }
+    $.ajax({
+      url: '/books/' + this.parentElement.id + '/likes/',
+      type: 'POST',
+      success: function(r){
+        
+      }
+    });
   });
 });

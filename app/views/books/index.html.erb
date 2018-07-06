@@ -45,6 +45,14 @@
             <p class="card-text">
               <%= truncate(book.description, length: 150) %>
             </p>
+            <div class="btn-group">
+              <div class="btn-group">
+                <small class="indie-font grey-text ml-3" data-toggle="tooltip" data-placement="top" title="Likes">Likes <span class="badge purple darken-2"><%= book.likes.count %></span></small>
+              </div>
+              <div class="btn-group">
+                <small class="indie-font grey-text ml-3" data-toggle="tooltip" data-placement="top" title="Reviews">Reviews <span class="badge purple darken-2"><%= book.reviews.count %></span></small>
+              </div>
+            </div>
             <!-- Card footer -->
             <div class="card-footer px-1">
               
@@ -52,9 +60,6 @@
                
                 <%= link_to '', book_path(book), toggle: "tooltip", placement: "top", title: "See More", class: "fas fa-eye grey-text ml-3" %>
                 
-                <a data-toggle="tooltip" data-placement="top" title="Likes">
-                  <i class="fa fa-heart grey-text ml-3"><span class="badge purple darken-2"><%= book.likes.count %></span></i>
-                </a>
                 <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
                   <i class="fa fa-shopping-cart grey-text ml-3"></i>
                 </a>
