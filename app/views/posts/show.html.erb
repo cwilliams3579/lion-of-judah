@@ -1,4 +1,4 @@
-<div class="container mt-2x mb">
+<div class="container mt mb">
     <!-- Section: Blog v.4 -->
 <section class="my-5">
 
@@ -10,18 +10,16 @@
 
       <!-- Card -->
       <div class="card card-cascade wider reverse">
-      <%= render 'layouts/messages' %>
         <!-- Card image -->
         <div class="view view-cascade overlay">
-          <!--<img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(142).jpg" alt="Sample image">-->
-          <%= image_tag(@post.image.url, class: "card-img-top") %>
+          <%= image_tag(@post.image.url, class: "card-img-top") if @post.image? %>
           <a href="#!">
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
 
         <!-- Card content -->
-        <div class="card-body card-body-cascade text-center">
+        <div class="card-body card-body-cascade text-center purple-border-4x">
 
           <!-- Title -->
           <h2 class="font-weight-bold indie-font goldenrod"> <%= @post.title.titleize %> </h2>
@@ -29,30 +27,12 @@
           <p class="grey-text">Written by <a><strong class="purple-text"><%= @post.user.full_name.titleize %></strong></a>, <%= @post.created_at.strftime("%m/%d/%Y") %></p>
           <!-- Social shares -->
           <div class="social-counters">
-            <!-- Facebook -->
-            <a class="btn btn-fb">
-              <i class="fab fa-facebook pr-2"></i>
-              <span class="clearfix d-none d-md-inline-block">Facebook</span>
-            </a>
-            <span class="counter">46</span>
-            <!-- Twitter -->
-            <a class="btn btn-tw">
-              <i class="fab fa-twitter pr-2"></i>
-              <span class="clearfix d-none d-md-inline-block">Twitter</span>
-            </a>
-            <span class="counter">22</span>
-            <!-- Google+ -->
-            <a class="btn btn-gplus">
-              <i class="fab fa-google-plus pr-2"></i>
-              <span class="clearfix d-none d-md-inline-block">Google+</span>
-            </a>
-            <span class="counter">31</span>
             <!-- Comments -->
-            <a class="btn btn-default">
+            <a >
               <i class="fas fa-comment pr-2"></i>
-              <span class="clearfix d-none d-md-inline-block title-fonts"><%= pluralize(@post.comments.count, 'Comment') %></span>
+              <span class="clearfix d-none d-md-inline-block indie-font"><%= pluralize(@post.comments.count, 'Comment') %></span>
             </a>
-            <span class="counter"><%= @post.comments.count %></span>
+            <!-- Comments -->
           </div>
           <!-- Social shares -->
 
