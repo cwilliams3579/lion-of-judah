@@ -26,7 +26,7 @@
             <!-- Category & Title -->
              
               <h6 class="h6-responsive"><%= link_to Category.find(book.category_id).name, category_path(book.category_id), class: "purple-text" %></h6>
-        
+              
             <h6 class="card-title goldenrod">
               <strong class="indie-font goldenrod">
                 <%= link_to book.title, book_path(book), class: "indie-font goldenrod" %>

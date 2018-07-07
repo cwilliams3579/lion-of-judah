@@ -15,6 +15,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    @categories = Category.all
     if params[:category].blank?
       @books = Book.paginate(page: params[:page], per_page: 5).order("created_at DESC")
       # @books = Book.all.order("created_at DESC")

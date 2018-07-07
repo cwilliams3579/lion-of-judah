@@ -1,9 +1,93 @@
-<p id="notice"><%= notice %></p>
+<div class="container mt mb">
+   <!-- Section: Products v.1 -->
+   <section class="text-center my-5">
+      <!-- Section heading -->
+      <h2 class="h2-responsive font-weight-bold text-center indie-font goldenrod my-5">Categories</h2>
+      <!-- Section description -->
+      <!-- Grid row -->
+      <div class="row">
+         <!-- Grid column -->
+         <% @category.books.each do |book| %>
+         <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+            <!-- Card -->
+            <div class="card card-cascade narrower card-ecommerce">
+               <!-- Card image -->
+               <div class="view view-cascade overlay">
+                  <%= image_tag book.image.url, class: "card-img-top", alt: "sample photo", style: "width:198px; height: 297px;" %>
+                  <a>
+                     <div class="mask rgba-white-slight"></div>
+                  </a>
+               </div>
+               <!-- Card image -->
+               <!-- Card content -->
+               <div class="card-body card-body-cascade text-center">
+                  <!-- Category & Title -->
+                  <h6 class="h6-responsive"><%= link_to Category.find(book.category_id).name, category_path(book.category_id), class: "purple-text" %></h6>
+                  <h6 class="card-title goldenrod">
+                     <strong class="indie-font goldenrod">
+                     <%= link_to book.title, book_path(book), class: "indie-font goldenrod" %>
+                     </strong>
+                  </h6>
+                  <!--Rating-->
+                  <ul class="rating">
+                     <li>
+                        <%= link_to new_book_review_path(book) do %>
+                        <div id="star-rating" data-turbolinks="false" data-score= <%= @avg_rating %> ></div>
+                        <% end %>
+                     </li>
+                  </ul>
+                  <!-- Description -->
+                  <p class="card-text">
+                     <%= truncate(book.description, length: 150) %>
+                  </p>
+                  <div class="btn-group">
+                     <div class="btn-group">
+                        <small class="indie-font grey-text ml-3" data-toggle="tooltip" data-placement="top" title="Likes">Likes <span class="badge purple darken-2"><%= book.likes.count %></span></small>
+                     </div>
+                     <div class="btn-group">
+                        <small class="indie-font grey-text ml-3" data-toggle="tooltip" data-placement="top" title="Reviews">Reviews <span class="badge purple darken-2"><%= book.reviews.count %></span></small>
+                     </div>
+                     <br/>
+                  </div>
+                  <!-- Card footer -->
+                  <div class="card-footer px-1">
+                     <span class="center">
+                     <%= link_to '', book_path(book), toggle: "tooltip", placement: "top", title: "See More", class: "fas fa-eye grey-text ml-3" %>
+                     <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
+                     <i class="fa fa-shopping-cart grey-text ml-3"></i>
+                     </a>
+                     <% if current_user && (current_user.admin?) %>
+                     &nbsp;
+                     <%= link_to '', edit_book_path(book), class: "fas fa-edit goldenrod", toggle: "tooltip", placement: "top", title:"Edit" %>
+                     &nbsp;
+                     <%= link_to '', book, class: "fa fa-trash active",toggle: "tooltip", placement: "top", title:"Destroy", onclick:"loadContent(1)", method: :delete, data: { confirm: 'Are you sure?' } %>
+                     <% end %>  
+                     </span>
+                  </div>
+               </div>
+               <!-- Card content -->
+            </div>
+            <!-- Card -->
+         </div>
+         <!-- Grid column -->
+         <% end %>
+      </div>
+      <!-- Grid row -->
+   </section>
+   <!-- Section: Products v.1 -->
+   <br>
+   <% if can? :create, @book %>
+     <div class="center">
+        <%= link_to '', new_category_path, class: "fas fa-tag fa-2x goldenrod" %>
+     </div>
+   <% end %>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<%= link_to '', categories_path, class: "fas fa-hand-o-left fa-2x goldenrod" %>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<script type="text/javascript">
+   $('#star-rating').raty({
+     path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
+     scoreName: 'review[rating]'
+   });
+</script>

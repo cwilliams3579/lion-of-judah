@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :search, :show]
   before_action :check_user, except: [:index, :show]
 
@@ -15,12 +16,14 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    @books = Book.all
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
     @category = Category.friendly.find(params[:id])
+    @book = Book.friendly.find(params[:id])
   end
 
   # GET /categories/new
@@ -75,7 +78,14 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.friendly.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "Oops something went wrong!"
+      redirect_to root_path
+    end
+    
+    def set_book
+      @book = Book.friendly.find(params[:id])
       rescue ActiveRecord::RecordNotFound
       flash[:alert] = "Oops something went wrong!"
       redirect_to root_path
