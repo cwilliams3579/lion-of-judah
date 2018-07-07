@@ -41,6 +41,8 @@ gem 'searchkick', '~> 3.1'
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'elasticsearch', '~> 6.1'
 gem 'faraday_middleware-aws-sigv4'
+gem 'figaro'
+gem 'fog-aws'
 group :development do
   gem 'better_errors'
   gem 'awesome_print', '~> 1.8'
@@ -56,6 +58,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 group :production do
-  #gem 'pg'
+  # gem 'pg'
   gem 'rails_12factor'
 end
