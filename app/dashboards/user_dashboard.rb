@@ -21,7 +21,7 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_ip: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    name: Field::String,
+    first_name: Field::String,
     role: Field::String.with_options(searchable: false),
   }.freeze
 
@@ -53,7 +53,7 @@ class UserDashboard < Administrate::BaseDashboard
     :last_sign_in_ip,
     :created_at,
     :updated_at,
-    :name,
+    :first_name,
     :role,
   ].freeze
 
@@ -71,7 +71,7 @@ class UserDashboard < Administrate::BaseDashboard
     :last_sign_in_at,
     :current_sign_in_ip,
     :last_sign_in_ip,
-    :name,
+    :first_name,
     :role,
   ].freeze
 

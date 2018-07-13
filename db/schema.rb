@@ -97,8 +97,8 @@ ActiveRecord::Schema.define(version: 2018_07_13_142047) do
     t.string "last_name"
     t.integer "role"
     t.string "provider"
-    t.string "name"
-    t.string "image"
+    t.string "uid"
+    t.text "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
