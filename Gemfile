@@ -45,6 +45,10 @@ gem 'figaro'
 gem 'fog-aws'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'omniauth-github'
+gem 'omniauth-linkedin'
+gem "omniauth-google-oauth2"
+
 group :development do
   gem 'better_errors'
   gem 'awesome_print', '~> 1.8'
