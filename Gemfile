@@ -43,6 +43,8 @@ gem 'elasticsearch', '~> 6.1'
 gem 'faraday_middleware-aws-sigv4'
 gem 'figaro'
 gem 'fog-aws'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 group :development do
   gem 'better_errors'
   gem 'awesome_print', '~> 1.8'
@@ -58,6 +60,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
+  # gem 'pg'
   gem 'rails_12factor'
 end
