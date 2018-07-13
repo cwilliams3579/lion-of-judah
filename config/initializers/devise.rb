@@ -18,7 +18,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'no-reply@' + Rails.application.secrets.domain_name
+  # config.mailer_sender = 'no-reply@' + Rails.application.secrets.domain_name
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -256,7 +256,13 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  # config.omniauth :github, 'f3508e512da8f7b1792c', 'a8e30bbfcd7aa196aaccfdc06931783536d345d6', scope: 'user,public_repo'
+  # config.omniauth :linkedin, 'APP_ID', 'APP_SECRET'
+  # config.omniauth :google_oauth2, 'APP_ID', 'APP_SECRET'
+  
+  config.omniauth :twitter, 'SfAUFSDc4uMFAq3De9WVsSg2D', 'eOk6RRnI5wJpgaR75pSWO3FnoR7CkFtPihPCtfBuW1TCCyhpfS'
+  config.omniauth :github, 'f3508e512da8f7b1792c', 'a8e30bbfcd7aa196aaccfdc06931783536d345d6', scope: "user:email"
+  config.omniauth :facebook, '1093343907419453', 'bba232be64fd55d7f9fd59acd8625f65', callback_url: "http://localhost:3000/users/auth/facebook/callback"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

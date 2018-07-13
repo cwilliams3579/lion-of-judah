@@ -60,4 +60,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   config.action_cable.disable_request_forgery_protection = true
+
+  # Devise mailer. Needs toi be changed when using in production
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

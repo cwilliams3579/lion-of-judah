@@ -22,7 +22,7 @@
       <h4 class="card-title"><strong class="indie-font goldenrod">Edward Houston</strong></h4>
       <div class="btn-group">
       <!-- Gravatar -->
-        <%= link_to gravatar_for(current_user), edit_user_registration_path, size: 20, :class => 'gravatar' %> &nbsp;
+        <%= link_to gravatar_for(current_user), edit_user_registration_path, size: 20, :class => 'gravatar' if current_user %> &nbsp;
       <!-- Gravatar -->
         <h5 class="purple-text pb-2"> <strong> archangel@gmail.com </strong></h5>
       </div>

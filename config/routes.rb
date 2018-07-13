@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations'}
+  devise_for :users, :controllers => { sessions: 'sessions', registrations: 'registrations', omniauth_callbacks: "users/omniauth_callbacks", confirmations: "confirmations"} 
+  as :user do
+   get 'sign_in' => 'sessions#new', :as => "login"
+   get 'sign_up' => 'registrations#new', :as => "signup"  
+   get 'sign_out' => 'devise/sessions#destroy', :as => "signout"
+  end
+  
   resources :users
   
   resources :categories do
