@@ -25,10 +25,10 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   def self.from_omniauth(auth, signed_in_resource = nil)
-  user = User.where(provider: auth.provider, uid: auth.uid).first
-  if user.present?
-    user
-  else
+    user = User.where(provider: auth.provider, uid: auth.uid).first
+    if user.present?
+      user
+    else
     # Check wether theres is already a user with the same 
     # email address
     user_with_email = User.find_by_email(auth.info.email)
@@ -90,23 +90,21 @@ class User < ApplicationRecord
       end
     end    
   end
-  return user
-  end
-  
-  # For Twitter (save the session eventhough we redirect user to registration page first)
-  def self.new_with_session(params, session)
-    if session["devise.user_attributes"]
-      new(session["devise.user_attributes"], without_protection: true) do |user|
-        user.attributes = params
-        user.valid?
-      end
-    else
-      super
+    return user
+    end
+    # For Twitter (save the session eventhough we redirect user to registration page first)
+    def self.new_with_session(params, session)
+      if session["devise.user_attributes"]
+        new(session["devise.user_attributes"], without_protection: true) do |user|
+          user.attributes = params
+          user.valid?
+        end
+      else
+        super
+      end  
     end  
-  end  
-  
-  # For Twitter (disable password validation)
-  def password_required?
-    super && provider.blank?
-  end        
+    # For Twitter (disable password validation)
+    def password_required?
+      super && provider.blank?
+    end          
 end
