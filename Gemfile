@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-ruby '2.5.1'
-gem 'rails', '~> 5.2.0'
+ruby '2.6.2'
+gem 'rails', '~> 5.2.2'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -61,7 +61,7 @@ group :development do
   gem 'rails_layout'
 end
 group :development, :test do
-  gem 'sqlite3'
+  gem "sqlite3", "~> 1.3.6"
 end
 group :production do
   # gem 'pg'
